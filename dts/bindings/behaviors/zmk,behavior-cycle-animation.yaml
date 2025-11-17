@@ -1,6 +1,29 @@
-# zmk,behavior-nice-view-theme.yaml
-description: Nice!View theme cycle behavior
+# zmk,behavior-cycle-animation.yaml
+description: Nice!View cycle + animation control
 
 compatible: "zmk,behavior-cycle-animation"
 
 include: one_param.yaml
+
+options:
+  param1:
+    values:
+      - value: NVC_TOG
+        display_name: Toggle animation
+        description: Toggle Nice!View animations on or off.
+        icon: "mdi:animation"
+
+      - value: NVC_OFF
+        display_name: Animations off
+        description: Disable animations and show a static frame.
+        icon: "mdi:animation-off"
+
+      - value: NVC_ON
+        display_name: Animations on
+        description: Enable animated playback for the current theme.
+        icon: "mdi:animation-play"
+
+      - value: NVC_NEXT
+        display_name: Next theme
+        description: Switch to the next Nice!View theme.
+        icon: "mdi:palette"
