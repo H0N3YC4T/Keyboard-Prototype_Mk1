@@ -8,10 +8,11 @@
 #include "animation_assets.h"
 
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
-static bool nice_view_animation = true;
-
-static lv_coord_t nice_view_theme_offset = 1;
 static const int nice_view_animation_speed = 1400;
+static bool nice_view_animation = true;
+static lv_coord_t nice_view_theme_offset = 1;
+
+
 
 static void calc_offset_for_theme(enum nice_view_theme theme);
 
@@ -37,30 +38,7 @@ enum nice_view_theme nice_view_theme_get(void) {
     return current_theme;
 }
 
-void nice_view_theme_next(void) {
-    enum nice_view_theme theme = nice_view_theme_get();
-    theme = (theme + 1) % NICE_VIEW_THEME_COUNT;
-    nice_view_theme_set(theme);
-}
 
-void nice_view_animation_toggle(void) {
-    nice_view_animation = !nice_view_animation;
-    zmk_display_request_update();
-}
-
-void nice_view_animation_off(void) {
-    if (nice_view_animation) {
-        nice_view_animation = false;
-        zmk_display_request_update();
-    }
-}
-
-void nice_view_animation_on(void) {
-    if (!nice_view_animation) {
-        nice_view_animation = true;
-        zmk_display_request_update();
-    }
-}
 
 static void calc_offset_for_theme(enum nice_view_theme theme) {
     const lv_coord_t max_width = 120;
