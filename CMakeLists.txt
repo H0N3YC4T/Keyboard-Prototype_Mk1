@@ -1,10 +1,10 @@
-# CMakeLists.txt
+# CMakeLists.txt at repo root (module)
 zephyr_library()
 
-# Add C sources
 zephyr_library_sources(
+    widgets/animation.c
+    widgets/animation_assets.c
     src/behaviors/behavior_cycle_animation.c
 )
-zephyr_library_include_directories(include)
 
-zephyr_library_include_directories(${ZMK_CONFIG}/include)
+zephyr_include_directories(boards/shields/nice_view_gem/widgets)

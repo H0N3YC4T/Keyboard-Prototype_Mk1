@@ -1,11 +1,11 @@
 // widgets/animation.h
-
 #pragma once
 
 #include <lvgl.h>
-#include "util.h"
-#include "screen_peripheral.h"
+// #include "util.h"
+// #include "screen_peripheral.h"
 
+// Theme selection
 enum nice_view_theme {
     NICE_VIEW_THEME_CRYSTAL = 0,
     NICE_VIEW_THEME_OMNISSIAH,
@@ -14,20 +14,17 @@ enum nice_view_theme {
     NICE_VIEW_THEME_COUNT,
 };
 
+// Init (optional hook if you need it)
+void nice_view_theme_init(void);
 
-// Init
-void nice_view_theme_init();
-
-// Internal draw function
+// Draw the current theme onto the given canvas
 void draw_animation(lv_obj_t *canvas);
 
-// Internal Functions
+// Theme control API
 void nice_view_theme_set(enum nice_view_theme theme);
 enum nice_view_theme nice_view_theme_get(void);
-
-// Theme control API
 void nice_view_theme_next(void);
+
 void nice_view_animation_toggle(void);
 void nice_view_animation_off(void);
 void nice_view_animation_on(void);
-
