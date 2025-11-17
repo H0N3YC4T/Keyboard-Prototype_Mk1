@@ -2,8 +2,8 @@
 #pragma once
 
 #include <lvgl.h>
-// #include "util.h"
-// #include "screen_peripheral.h"
+#include "util.h"
+#include "screen_peripheral.h"
 
 // Theme selection
 enum nice_view_theme {
