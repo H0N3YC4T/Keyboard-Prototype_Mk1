@@ -10,7 +10,7 @@
 #include <drivers/behavior.h>
 #include <zephyr/logging/log.h>
 #include <zmk/keymap.h>
-
+#include <dt-bindings/zmk/nice_view_cycle.h>
 #include "boards/shields/nice_view_gem/widgets/animation.h"
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);

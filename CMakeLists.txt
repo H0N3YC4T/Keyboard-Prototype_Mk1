@@ -8,3 +8,4 @@ zephyr_library_sources(
 )
 
 zephyr_include_directories(boards/shields/nice_view_gem/widgets)
+zephyr_library_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
