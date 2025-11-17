@@ -1,4 +1,4 @@
-name: zmk-keyboard-prototype_mk1
+name: prototype_mk1
 build:
   cmake: .
   kconfig: Kconfig
