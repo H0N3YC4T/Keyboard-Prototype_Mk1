@@ -1,9 +1,7 @@
-name: prototype_mk1
+name: Keyboard-Prototype_Mk1
 build:
   cmake: .
   kconfig: Kconfig
   settings:
     board_root: .
     dts_root: .
-include:
-  - include
