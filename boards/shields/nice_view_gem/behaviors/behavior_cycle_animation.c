@@ -10,7 +10,7 @@
 #include <zmk/behavior.h>
 #include <zephyr/logging/log.h>
 #include <zmk/keymap.h>
-#include "widgets/animation.h"
+#include "../widgets/animation.h"
 
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
