@@ -2,7 +2,7 @@
 
 #include <lvgl.h>
 #include <util.h>
-#include <prototype_mk1/screen_peripheral.h>
+#include <screen_peripheral.h>
 
 enum nice_view_theme {
     NICE_VIEW_THEME_CRYSTAL = 0,

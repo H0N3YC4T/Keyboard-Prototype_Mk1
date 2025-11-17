@@ -2,7 +2,7 @@
 #include <zmk/display.h>
 #include <lvgl.h>
 
-#include <prototype_mk1/animation.h>
+#include <animation.h>
 #include "animation_assets.h"
 
 

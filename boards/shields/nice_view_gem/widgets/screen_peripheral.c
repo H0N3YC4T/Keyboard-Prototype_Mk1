@@ -13,10 +13,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/display.h>
 #include <zmk/usb.h>
 
-#include <prototype_mk1/animation.h>
+#include <animation.h>
 #include "battery.h"
 #include "output.h"
-#include <prototype_mk1/screen_peripheral.h>
+#include <screen_peripheral.h>
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 

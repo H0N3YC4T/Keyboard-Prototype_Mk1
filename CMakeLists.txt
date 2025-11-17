@@ -2,6 +2,7 @@
 zephyr_library()
 zephyr_library_sources(src/behaviors/behavior_cycle_animation.c)
 
-if(DEFINED ZMK_CONFIG)
 zephyr_library_include_directories(${ZMK_CONFIG}/include)
-endif()
+zephyr_library_sources(include/animation.h)
+zephyr_library_sources(include/util.h)
+zephyr_library_sources(include/screen_peripheral.h)
