@@ -1,7 +1,7 @@
 #pragma once
 
 #include <lvgl.h>
-#include "util.h"
+#include <prototype_mk1/util.h>
 #include <prototype_mk1/screen_peripheral.h>
 
 enum nice_view_theme {
