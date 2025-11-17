@@ -1,6 +1,3 @@
-# Always build the animation control behavior when this shield is in use.
-zephyr_library_sources(behaviors/behavior_cycle_animation.c)
-
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   zephyr_library_include_directories(${ZMK_CONFIG}/include)
