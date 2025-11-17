@@ -4,6 +4,9 @@
 #include <lvgl.h>
 #include <zmk/display.h>
 
+#include <zmk/event_manager.h>
+#include <zmk/events/cycle_animation_state_changed.h>
+
 #include "animation.h"
 #include "animation_assets.h"
 
@@ -109,3 +112,41 @@ void draw_animation(lv_obj_t *canvas) {
 
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, nice_view_theme_offset, 0);
 }
+
+
+// -----------------------------------------------------------------------------
+// Internal helper: map event type -> animation API
+// -----------------------------------------------------------------------------
+static void handle_cycle_animation_type(int type)
+{
+    switch (type) {
+    case NVC_TOGGLE:
+        nice_view_animation_toggle();
+        break;
+
+    case NVC_NEXT:
+        nice_view_theme_next();
+        break;
+
+    default:
+        /* Unknown type; ignore silently. */
+        break;
+    }
+}
+// -----------------------------------------------------------------------------
+// Event listener: respond to cycle_animation_state_changed
+// -----------------------------------------------------------------------------
+static int nice_view_cycle_animation_listener(const struct zmk_event_header *eh)
+{
+    const struct cycle_animation_state_changed *evt =
+        cast_cycle_animation_state_changed(eh);
+    if (!evt) {
+        return 0;
+    }
+
+    handle_cycle_animation_type(evt->data.type);
+    return 0;
+}
+
+ZMK_LISTENER(nice_view_cycle_animation_listener, nice_view_cycle_animation_listener);
+ZMK_SUBSCRIPTION(nice_view_cycle_animation_listener, cycle_animation_state_changed);
