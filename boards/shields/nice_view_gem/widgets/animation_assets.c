@@ -172,17 +172,17 @@ static const lv_img_dsc_t *ultramar_imgs[] = {
 
 // -------------------------------------------------------------------------------
 // Lookup Table
-const lv_img_dsc_t * const anim_sets[NICE_VIEW_GEM_THEME_COUNT] = {
-    [NICE_VIEW_GEM_THEME_CRYSTAL]       = crystal_imgs,
-    [NICE_VIEW_GEM_THEME_OMNISSIAH]     = omnissiah_imgs,
-    [NICE_VIEW_GEM_THEME_ULTRAMAR]      = ultramar_imgs,
-    [NICE_VIEW_GEM_THEME_TRANSMUTATION] = transmutation_imgs,
+const lv_img_dsc_t * const anim_sets[NICE_VIEW_THEME_COUNT] = {
+    [NICE_VIEW_THEME_CRYSTAL]       = crystal_imgs,
+    [NICE_VIEW_THEME_OMNISSIAH]     = omnissiah_imgs,
+    [NICE_VIEW_THEME_ULTRAMAR]      = ultramar_imgs,
+    [NICE_VIEW_THEME_TRANSMUTATION] = transmutation_imgs,
 };
 
 // Frame Counter
-const size_t anim_set_lengths[NICE_VIEW_GEM_THEME_COUNT] = {
-    [NICE_VIEW_GEM_THEME_CRYSTAL]       = ARRAY_SIZE(crystal_imgs),
-    [NICE_VIEW_GEM_THEME_OMNISSIAH]     = ARRAY_SIZE(omnissiah_imgs),
-    [NICE_VIEW_GEM_THEME_ULTRAMAR]      = ARRAY_SIZE(ultramar_imgs),
-    [NICE_VIEW_GEM_THEME_TRANSMUTATION] = ARRAY_SIZE(transmutation_imgs),
+const size_t anim_set_lengths[NICE_VIEW_THEME_COUNT] = {
+    [NICE_VIEW_THEME_CRYSTAL]       = ARRAY_SIZE(crystal_imgs),
+    [NICE_VIEW_THEME_OMNISSIAH]     = ARRAY_SIZE(omnissiah_imgs),
+    [NICE_VIEW_THEME_ULTRAMAR]      = ARRAY_SIZE(ultramar_imgs),
+    [NICE_VIEW_THEME_TRANSMUTATION] = ARRAY_SIZE(transmutation_imgs),
 };
