@@ -2,15 +2,10 @@
 
 compatible: "zmk,behavior-cycle-animation"
 
-description: |
-  Behavior that controls Nice!View theme and animation:
-  - Toggle animation
-  - Turn animation ON
-  - Turn animation OFF
-  - Cycle to next Nice!View theme
-
 include: one_param.yaml
 
 properties:
-  "#binding-cells":
-    const: 1
+  label:
+    type: string
+    required: true
+    description: Human readable label for this behavior.
