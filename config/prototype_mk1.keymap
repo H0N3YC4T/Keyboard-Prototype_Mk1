@@ -35,12 +35,6 @@
             #sensor-binding-cells = <0>;
             bindings = <&bl BL_INC>, <&bl BL_DEC>;
         };
-
-        nvtheme: nvtheme {
-            compatible = "zmk,behavior-cycle-animation";
-            #binding-cells = <0>;
-            label = "NV_THEME";
-        };
     };
 
     keymap {
