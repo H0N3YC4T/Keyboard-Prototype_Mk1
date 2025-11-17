@@ -11,7 +11,7 @@
 #include <zephyr/logging/log.h>
 #include <zmk/keymap.h>
 #include "../widgets/animation.h"
-
+#include "nice_view_cycle.h"
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
