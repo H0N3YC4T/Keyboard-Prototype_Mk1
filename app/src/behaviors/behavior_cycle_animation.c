@@ -9,14 +9,15 @@
 #include <zephyr/device.h>
 #include <drivers/behavior.h>
 #include <zephyr/logging/log.h>
-#include <zmk/behavior.h>
 
+#include <zmk/behavior.h>
 #include <zmk/keymap.h>
 #include <zmk/keys.h>
-
 #include <zmk/endpoints.h>
 #include <zmk/event_manager.h>
 
+#include <zmk/behaviors/cycle_animation.h>
+#include <zmk/events/cycle_animation_state_changed.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -57,49 +58,43 @@ static const struct behavior_parameter_metadata metadata = {
     .sets = param_metadata_set,
 };
 
-#endif
+#endif /* CONFIG_ZMK_BEHAVIOR_METADATA */
 
-static int on_keymap_binding_convert_central_state_dependent_params(
-    struct zmk_behavior_binding *binding,
-    struct zmk_behavior_binding_event event) {
-    if (binding->param1 == NVC_TOG) {
-        binding->param1 = nice_view_animation_is_enabled() ? NVC_OFF : NVC_ON;
-    }
-    return 0;
-}
-
-
+/* Key pressed: raise custom animation-change event based on param1 */
 static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
-                                    struct zmk_behavior_binding_event event) {
+                                     struct zmk_behavior_binding_event event)
+{
+    struct behavior_change_animation_data data = {0};
+
     switch (binding->param1) {
     case NVC_TOG:
-        nice_view_animation_toggle();
-        return ZMK_BEHAVIOR_OPAQUE;
-
-    case NVC_OFF:
-        nice_view_animation_off();
-        return ZMK_BEHAVIOR_OPAQUE;
-
-    case NVC_ON:
-        nice_view_animation_on();
-        return ZMK_BEHAVIOR_OPAQUE;
+        data.type = 0;
+        break;
 
     case NVC_NEXT:
-        nice_view_theme_next();
-        return ZMK_BEHAVIOR_OPAQUE;
+        data.type = 1;
+        break;
+
     default:
         LOG_ERR("Unknown animation command param1=%d", binding->param1);
-    }
         return -ENOTSUP;
+    }
+
+    /* This function is assumed to be declared in cycle_animation_state_changed.h */
+    raise_zmk_change_animation_event(data);
+
+    /* We "consume" the press; nothing else should interpret this key */
+    return ZMK_BEHAVIOR_OPAQUE;
 }
 
-static int on_keymap_binding_released(struct zmk_behavior_binding *binding, 
-                                    struct zmk_behavior_binding_event event) {
+static int on_keymap_binding_released(struct zmk_behavior_binding *binding,
+                                      struct zmk_behavior_binding_event event)
+{
+    /* Nothing to do on release; still consume the event */
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
 static const struct behavior_driver_api behavior_cycle_animation_driver_api = {
-    .binding_convert_central_state_dependent_params = on_keymap_binding_convert_central_state_dependent_params,
     .binding_pressed =  on_keymap_binding_pressed,
     .binding_released = on_keymap_binding_released,
     .locality = BEHAVIOR_LOCALITY_GLOBAL,
@@ -108,12 +103,17 @@ static const struct behavior_driver_api behavior_cycle_animation_driver_api = {
 #endif
 };
 
-BEHAVIOR_DT_INST_DEFINE(
-    0, 
-    NULL, NULL, 
-    NULL, NULL,
-    APPLICATION, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
-    &behavior_cycle_animation_driver_api
-);
+/* One driver instance per devicetree node */
+#define CYCLE_ANIMATION_INST(n)                                                \
+    BEHAVIOR_DT_INST_DEFINE(n,                                                 \
+                            NULL,                                              \
+                            NULL,                                              \
+                            NULL,                                              \
+                            NULL,                                              \
+                            APPLICATION,                                       \
+                            CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,               \
+                            &behavior_cycle_animation_driver_api);
 
-#endif
+DT_INST_FOREACH_STATUS_OKAY(CYCLE_ANIMATION_INST);
+
+#endif /* DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT) */
