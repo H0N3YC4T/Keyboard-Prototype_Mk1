@@ -2,7 +2,7 @@
 
 #include <lvgl.h>
 #include <zmk/endpoints.h>
-#include <include/util.h>
+#include <util.h>
 
 
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)

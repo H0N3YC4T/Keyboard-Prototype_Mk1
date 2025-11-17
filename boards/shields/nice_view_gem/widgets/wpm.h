@@ -1,7 +1,7 @@
 #pragma once
 
 #include <lvgl.h>
-#include <include/util.h>
+#include <util.h>
 
 struct wpm_status_state {
     uint8_t wpm;
