@@ -1,0 +1,19 @@
+/*
+ * Nice!View theme cycle behavior instance
+ */
+
+#include <dt-bindings/zmk/behaviors.h>
+
+/ {
+    behaviors {
+        /* Behavior can run on peripherals (locality = GLOBAL),
+         * so node name must be <= 8 characters.
+         */
+        /omit-if-no-ref/
+        nvtheme: nvtheme {
+            compatible = "zmk,behavior-cycle-animation";
+            #binding-cells = <0>;
+            label = "NV_THEME";
+        };
+    };
+};
