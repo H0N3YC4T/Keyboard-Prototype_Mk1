@@ -36,6 +36,11 @@
             #sensor-binding-cells = <0>;
             bindings = <&bl BL_INC>, <&bl BL_DEC>;
         };
+        nvcycle: cycle_animation {
+            compatible = "zmk,behavior-cycle-animation";
+            #binding-cells = <0>;
+            display-name = "Cycle Nice!View Animation";
+        };
     };
 
     keymap {
