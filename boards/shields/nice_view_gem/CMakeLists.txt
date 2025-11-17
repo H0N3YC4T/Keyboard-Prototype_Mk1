@@ -1,3 +1,6 @@
+# Always build the animation control behavior when this shield is in use.
+zephyr_library_sources(behaviors/behavior_cycle_animation.c)
+
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   zephyr_library_include_directories(${ZMK_CONFIG}/include)
@@ -9,10 +12,10 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   zephyr_library_sources(widgets/util.c)
   
   if(NOT CONFIG_ZMK_SPLIT OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-  zephyr_library_sources(widgets/layer.c)
-  zephyr_library_sources(widgets/profile.c)
-  zephyr_library_sources(widgets/screen.c)
-  zephyr_library_sources(widgets/wpm.c)
+    zephyr_library_sources(widgets/layer.c)
+    zephyr_library_sources(widgets/profile.c)
+    zephyr_library_sources(widgets/screen.c)
+    zephyr_library_sources(widgets/wpm.c)
   else()
     zephyr_library_sources(assets/animations/crystal.c)
     zephyr_library_sources(assets/animations/omnissiah.c)
