@@ -3,7 +3,6 @@
  * Nice!View theme + animation control behavior
  */
 
-/* Convert "zmk,behavior-cycle-animation" → zmk_behavior_cycle_animation */
 #define DT_DRV_COMPAT zmk_behavior_cycle_animation
 
 #include <zephyr/device.h>
@@ -12,11 +11,8 @@
 
 #include <zmk/behavior.h>
 #include <zmk/keymap.h>
-#include <zmk/keys.h>
-#include <zmk/endpoints.h>
 #include <zmk/event_manager.h>
 
-#include <zmk/behaviors/cycle_animation.h>
 #include <zmk/events/cycle_animation_state_changed.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -25,24 +21,15 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #if IS_ENABLED(CONFIG_ZMK_BEHAVIOR_METADATA)
 
+/* Only two possible values now */
 static const struct behavior_parameter_value_metadata param_values[] = {
     {
         .display_name = "Toggle Animation Movement",
-        .value = NVC_TOG,
+        .value = NVC_TOGGLE,
         .type = BEHAVIOR_PARAMETER_VALUE_TYPE_VALUE,
     },
     {
-        .display_name = "Turn Off Animation Movement",
-        .value = NVC_OFF,
-        .type = BEHAVIOR_PARAMETER_VALUE_TYPE_VALUE,
-    },
-    {
-        .display_name = "Turn On Animation Movement",
-        .value = NVC_ON,
-        .type = BEHAVIOR_PARAMETER_VALUE_TYPE_VALUE,
-    },
-    {
-        .display_name = "Go to next Theme",
+        .display_name = "Go To Next Theme",
         .value = NVC_NEXT,
         .type = BEHAVIOR_PARAMETER_VALUE_TYPE_VALUE,
     },
@@ -60,19 +47,18 @@ static const struct behavior_parameter_metadata metadata = {
 
 #endif /* CONFIG_ZMK_BEHAVIOR_METADATA */
 
-/* Key pressed: raise custom animation-change event based on param1 */
 static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
                                      struct zmk_behavior_binding_event event)
 {
     struct behavior_change_animation_data data = {0};
 
     switch (binding->param1) {
-    case NVC_TOG:
-        data.type = 0;
+    case NVC_TOGGLE:
+        data.type = NVC_TOGGLE;
         break;
 
     case NVC_NEXT:
-        data.type = 1;
+        data.type = NVC_NEXT;
         break;
 
     default:
@@ -80,17 +66,18 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
         return -ENOTSUP;
     }
 
-    /* This function is assumed to be declared in cycle_animation_state_changed.h */
-    raise_zmk_change_animation_event(data);
+    int ret = raise_zmk_change_animation_event(data);
+    if (ret < 0) {
+        LOG_ERR("Failed to raise cycle_animation_state_changed event: %d", ret);
+        return ret;
+    }
 
-    /* We "consume" the press; nothing else should interpret this key */
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
 static int on_keymap_binding_released(struct zmk_behavior_binding *binding,
                                       struct zmk_behavior_binding_event event)
 {
-    /* Nothing to do on release; still consume the event */
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
@@ -103,15 +90,14 @@ static const struct behavior_driver_api behavior_cycle_animation_driver_api = {
 #endif
 };
 
-/* One driver instance per devicetree node */
-#define CYCLE_ANIMATION_INST(n)                                                \
-    BEHAVIOR_DT_INST_DEFINE(n,                                                 \
-                            NULL,                                              \
-                            NULL,                                              \
-                            NULL,                                              \
-                            NULL,                                              \
-                            APPLICATION,                                       \
-                            CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,               \
+#define CYCLE_ANIMATION_INST(n)                                                 \
+    BEHAVIOR_DT_INST_DEFINE(n,                                                  \
+                            NULL,                                               \
+                            NULL,                                               \
+                            NULL,                                               \
+                            NULL,                                               \
+                            APPLICATION,                                        \
+                            CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,                \
                             &behavior_cycle_animation_driver_api);
 
 DT_INST_FOREACH_STATUS_OKAY(CYCLE_ANIMATION_INST);

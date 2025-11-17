@@ -3,9 +3,3 @@
 compatible: "zmk,behavior-cycle-animation"
 
 include: one_param.yaml
-
-properties:
-  label:
-    type: string
-    required: true
-    description: Human readable label for this behavior.
