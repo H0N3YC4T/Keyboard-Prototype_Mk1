@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "app/dts/bindings/behaviors/cycle_animation.dtsi"
 
 #define BASE 0
 #define LOWER 1
