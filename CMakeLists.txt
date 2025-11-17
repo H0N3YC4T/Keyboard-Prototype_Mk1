@@ -2,8 +2,8 @@
 zephyr_library()
 
 zephyr_library_sources(
-    widgets/animation.c
-    widgets/animation_assets.c
+    boards/shields/nice_view_gem/widgets/animation.c
+    boards/shields/nice_view_gem/widgets/animation_assets.c
     src/behaviors/behavior_cycle_animation.c
 )
 
