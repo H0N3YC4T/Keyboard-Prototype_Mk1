@@ -172,7 +172,7 @@ static const lv_img_dsc_t *ultramar_imgs[] = {
 
 // -------------------------------------------------------------------------------
 // Lookup Table
-const lv_img_dsc_t * const nice_view_anim_sets[NICE_VIEW_THEME_COUNT] = {
+const lv_img_dsc_t * const *nice_view_anim_sets[NICE_VIEW_THEME_COUNT] = {
     [NICE_VIEW_THEME_CRYSTAL]       = crystal_imgs,
     [NICE_VIEW_THEME_OMNISSIAH]     = omnissiah_imgs,
     [NICE_VIEW_THEME_ULTRAMAR]      = ultramar_imgs,

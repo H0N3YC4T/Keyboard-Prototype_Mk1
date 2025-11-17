@@ -7,7 +7,7 @@
 #define DT_DRV_COMPAT zmk_behavior_cycle_animation
 
 #include <zephyr/device.h>
-#include <drivers/behavior.h>
+#include <zmk/behavior.h>
 #include <zephyr/logging/log.h>
 #include <zmk/keymap.h>
 #include <dt-bindings/zmk/nice_view_cycle.h>
