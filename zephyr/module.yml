@@ -1,7 +1,6 @@
 name: Keyboard-Prototype_Mk1
 
 build:
-  cmake: .
   settings:
     board_root: .
     dts_root: .
