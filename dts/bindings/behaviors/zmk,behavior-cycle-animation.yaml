@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: MIT
+
+compatible: "zmk,behavior-cycle-animation"
+
+include: one_param.yaml
