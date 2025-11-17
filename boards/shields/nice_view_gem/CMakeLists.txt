@@ -1,7 +1,9 @@
-
 zephyr_include_directories(
-  ${ZMK_BASE}/app/include
+  ${CMAKE_SOURCE_DIR}/include
+  ${ZMK_CONFIG}/include
+  ${ZMK_APP}/include
 )
+
 # Always build the animation control behavior when this shield is in use.
 zephyr_library_sources(behaviors/behavior_cycle_animation.c)
 
