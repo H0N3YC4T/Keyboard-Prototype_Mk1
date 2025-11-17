@@ -1,6 +1,0 @@
-# zmk,behavior-nice-view-theme.yaml
-description: Nice!View theme cycle behavior
-
-compatible: "zmk,behavior-cycle-animation"
-
-include: zero_param.yaml

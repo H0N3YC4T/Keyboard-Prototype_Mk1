@@ -1,0 +1,5 @@
+DT_COMPAT_ZMK_BEHAVIOR_CYCLE_ANIMATION := zmk,behavior-cycle-animation
+config ZMK_BEHAVIOR_CYCLE_ANIMATION
+		bool
+		default y
+
