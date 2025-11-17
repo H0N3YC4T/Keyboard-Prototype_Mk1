@@ -29,17 +29,17 @@
         };
     };
 
+
     behaviors {
         bl_mod: bl_mod {
             compatible = "zmk,behavior-sensor-rotate";
+            label = "BL_MOD";
             #sensor-binding-cells = <0>;
             bindings = <&bl BL_INC>, <&bl BL_DEC>;
         };
-
-        nvcycle: cycle_animation {
+        NVC: cycle_animation {
             compatible = "zmk,behavior-cycle-animation";
-            #binding-cells = <0>;
-            display-name = "Cycle Nice!View Animation";
+            #binding-cells = <1>;
         };
     };
 
