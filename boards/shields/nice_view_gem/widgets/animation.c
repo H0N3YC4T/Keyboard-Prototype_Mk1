@@ -67,5 +67,6 @@ void draw_animation(lv_obj_t *canvas) {
     uint32_t idx = k_uptime_get_32() % frame_count;
     lv_img_set_src(art, frames[idx]);
 #endif
-    lv_obj_align(art, LV_ALIGN_TOP_LEFT, animation_offset, 0);
+    lv_obj_align(art, LV_ALIGN_TOP_LEFT, 1, 0);
+    // lv_obj_align(art, LV_ALIGN_TOP_LEFT, animation_offset, 0);
 }
