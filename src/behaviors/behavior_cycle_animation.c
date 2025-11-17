@@ -14,6 +14,7 @@
 #include "boards/shields/nice_view_gem/widgets/animation.h"
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
+ZMK_BEHAVIOR_DEFINE(nvc, nvc_behavior_driver_api);
 
 #if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
 
