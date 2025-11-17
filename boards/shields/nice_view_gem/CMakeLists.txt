@@ -1,5 +1,5 @@
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
-  zephyr_library_sources(app PRIVATE app/src/behaviors/behavior_cycle_animation.c)
+  target_sources(app PRIVATE app/src/behaviors/behavior_cycle_animation.c)
 
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   zephyr_library_sources(custom_status_screen.c)
