@@ -1,6 +1,6 @@
 // widgets/animation_assets.c
 #include <lvgl.h>
-#include <prototype_mk1/animation.h>
+#include <include/animation.h>
 #include "animation_assets.h"
 
 // -------------------------------------------------------------------------------

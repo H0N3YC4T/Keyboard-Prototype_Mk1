@@ -3,7 +3,7 @@
 
 #include <lvgl.h>
 #include <stddef.h>
-#include <prototype_mk1/animation.h>
+#include <include/animation.h>
 
 // One pointer-array per theme, to be indexed with nice_view_gem_theme.
 extern const lv_img_dsc_t * const anim_sets[NICE_VIEW_GEM_THEME_COUNT];

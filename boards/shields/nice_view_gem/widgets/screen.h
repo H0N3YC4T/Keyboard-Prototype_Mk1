@@ -2,7 +2,7 @@
 
 #include <lvgl.h>
 #include <zephyr/kernel.h>
-#include <prototype_mk1/util.h>
+#include <proincludetotype_mk1/util.h>
 
 struct zmk_widget_screen {
     sys_snode_t node;

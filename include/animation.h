@@ -1,8 +1,8 @@
 #pragma once
 
 #include <lvgl.h>
-#include <prototype_mk1/util.h>
-#include <prototype_mk1/screen_peripheral.h>
+#include <include/util.h>
+#include <include/screen_peripheral.h>
 
 enum nice_view_theme {
     NICE_VIEW_THEME_CRYSTAL = 0,
