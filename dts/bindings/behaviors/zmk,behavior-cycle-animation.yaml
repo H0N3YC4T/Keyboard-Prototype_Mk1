@@ -3,4 +3,4 @@ description: Nice!View theme cycle behavior
 
 compatible: "zmk,behavior-cycle-animation"
 
-include: zero_param.yaml
+include: one_param.yaml
