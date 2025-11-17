@@ -2,6 +2,6 @@
 zephyr_library()
 zephyr_library_sources(src/behaviors/behavior_cycle_animation.c)
 
-zephyr_include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
+if(DEFINED ZMK_CONFIG)
+zephyr_library_include_directories(${ZMK_CONFIG}/include)
+endif()
