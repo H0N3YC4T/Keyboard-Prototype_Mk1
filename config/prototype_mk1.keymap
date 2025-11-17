@@ -29,20 +29,6 @@
         };
     };
 
-    behaviors {
-        bl_mod: bl_mod {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "BL_MOD";
-            #sensor-binding-cells = <0>;
-            bindings = <&bl BL_INC>, <&bl BL_DEC>;
-        };
-
-        NVC: cycle_animation {
-            compatible = "zmk,behavior-cycle-animation";
-            #binding-cells = <1>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -104,15 +90,15 @@
             display-name = "Special";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
-&none       &bl BL_INC    &NVC (NVC_TOG)  &studio_unlock  &none              &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
-&none       &bl BL_TOG    &NVC (NVC_NEXT) &none           &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none       &bl BL_DEC    &none           &none           &none              &none               &kp K_MUTE  &bl BL_TOG  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
+&sys_reset  &bl BL_INC    &NVC 0          &none           &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
+&none       &bl BL_TOG    &NVC 3          &none           &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none       &bl BL_DEC    &none           &none           &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
                                           &none           &trans             &trans              &trans      &trans      &trans             &trans          &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&bl_mod>;
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
