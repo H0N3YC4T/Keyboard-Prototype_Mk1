@@ -1,11 +1,4 @@
-zephyr_include_directories(
-  ${CMAKE_SOURCE_DIR}/include
-  ${ZMK_CONFIG}/include
-  ${ZMK_APP}/include
-)
 zephyr_library_include_directories(${ZMK_BASE}/app/include)
-
-
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   zephyr_library_include_directories(${ZMK_CONFIG}/include)

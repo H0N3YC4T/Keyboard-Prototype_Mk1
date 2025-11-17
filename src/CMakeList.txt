@@ -1,7 +1,0 @@
-# Add include paths so custom behaviors can see zmk headers
-zephyr_include_directories(
-    ${ZEPHYR_BASE}/../zmk/app/include
-)
-
-# Add all behavior sources
-add_subdirectory(behaviors)
