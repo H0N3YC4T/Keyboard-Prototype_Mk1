@@ -2,3 +2,4 @@ name: zmk-keyboard-prototype_mk1
 build:
   settings:
     board_root: .
+    dts_root: dts
