@@ -1,7 +1,7 @@
 #pragma once
 
 #include <lvgl.h>
-#include "util.h"
+#include <prototype_mk1/util.h>
 
 struct battery_status_state {
     uint8_t level;
