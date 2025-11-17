@@ -8,9 +8,9 @@ description: |
   - Turn animation ON
   - Turn animation OFF
   - Cycle to next Nice!View theme
-
-include: 
-  - base-behavior.yaml
+  
+include:
+  - ../behaviors/base-behavior.yaml
 
 properties:
   "#binding-cells":
