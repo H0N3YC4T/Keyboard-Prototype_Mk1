@@ -1,7 +1,6 @@
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
-  target_sources(app PRIVATE app/src/behaviors/behavior_cycle_animation.c)
-
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
+  target_sources(app PRIVATE ${CMAKE_SOURCE_DIR}/src/behaviors/behavior_cycle_animation.c)
   zephyr_library_sources(custom_status_screen.c)
   zephyr_library_sources(assets/images.c)
   zephyr_library_sources(widgets/battery.c)
