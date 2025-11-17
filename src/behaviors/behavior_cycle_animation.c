@@ -11,7 +11,7 @@
 #include <drivers/behavior.h>
 #include <zephyr/logging/log.h>
 
-#include "animation.h"
+#include "boards/shields/nice_view_gem/widgets/animation.h"
 #include <zmk/keymap.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
