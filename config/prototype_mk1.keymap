@@ -32,7 +32,6 @@
     behaviors {
         bl_mod: bl_mod {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "BL_MOD";
             #sensor-binding-cells = <0>;
             bindings = <&bl BL_INC>, <&bl BL_DEC>;
         };
