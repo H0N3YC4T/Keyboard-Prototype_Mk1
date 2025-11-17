@@ -10,7 +10,6 @@
 #include <zmk/behavior.h>
 #include <zephyr/logging/log.h>
 #include <zmk/keymap.h>
-#include <dt-bindings/zmk/nice_view_cycle.h>
 #include "widgets/animation.h"
 
 
