@@ -4,7 +4,7 @@
 #include "animation_assets.h"
 
 // -------------------------------------------------------------------------------
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+#define NICE_VIEW_ANIM_ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 
 // -------------------------------------------------------------------------------
 // Declare Crystal Animation
@@ -181,8 +181,8 @@ const lv_img_dsc_t * const nice_view_anim_sets[NICE_VIEW_THEME_COUNT] = {
 
 // Frame Counter
 const size_t nice_view_anim_lengths[NICE_VIEW_THEME_COUNT] = {
-    [NICE_VIEW_THEME_CRYSTAL]       = ARRAY_SIZE(crystal_imgs),
-    [NICE_VIEW_THEME_OMNISSIAH]     = ARRAY_SIZE(omnissiah_imgs),
-    [NICE_VIEW_THEME_ULTRAMAR]      = ARRAY_SIZE(ultramar_imgs),
-    [NICE_VIEW_THEME_TRANSMUTATION] = ARRAY_SIZE(transmutation_imgs),
+    [NICE_VIEW_THEME_CRYSTAL]       = NICE_VIEW_ANIM_ARRAY_SIZE(crystal_imgs),
+    [NICE_VIEW_THEME_OMNISSIAH]     = NICE_VIEW_ANIM_ARRAY_SIZE(omnissiah_imgs),
+    [NICE_VIEW_THEME_ULTRAMAR]      = NICE_VIEW_ANIM_ARRAY_SIZE(ultramar_imgs),
+    [NICE_VIEW_THEME_TRANSMUTATION] = NICE_VIEW_ANIM_ARRAY_SIZE(transmutation_imgs),
 };
