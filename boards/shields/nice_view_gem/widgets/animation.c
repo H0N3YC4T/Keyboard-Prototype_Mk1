@@ -9,6 +9,7 @@
 
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
 static bool nice_view_animation = true;
+
 static lv_coord_t nice_view_theme_offset = 1;
 static const int nice_view_animation_speed = 1400;
 
@@ -17,6 +18,10 @@ static void calc_offset_for_theme(enum nice_view_theme theme);
 void nice_view_theme_init(void) {
     /* First draw will be triggered by display update */
     zmk_display_request_update();
+}
+
+bool nice_view_animation_is_enabled(void) {
+    return nice_view_animation;
 }
 
 void nice_view_theme_set(enum nice_view_theme theme) {

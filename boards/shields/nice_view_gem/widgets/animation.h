@@ -14,6 +14,8 @@ enum nice_view_theme {
     NICE_VIEW_THEME_COUNT,
 };
 
+bool nice_view_animation_is_enabled(void);
+
 // Init (optional hook if you need it)
 void nice_view_theme_init(void);
 

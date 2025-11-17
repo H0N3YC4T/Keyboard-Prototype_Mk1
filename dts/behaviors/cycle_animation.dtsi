@@ -2,11 +2,9 @@
 
 / {
     behaviors {
-        /omit-if-no-ref/
-        nvcycle: cycle_animation {
+        NVC: cycle_animation {
             compatible = "zmk,behavior-cycle-animation";
-            #binding-cells = <0>;
-            display-name = "Cycle Nice!View Animation";
+            #binding-cells = <1>;
         };
     };
 };
