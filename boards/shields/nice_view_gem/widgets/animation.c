@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <zephyr/kernel.h>
 #include <lvgl.h>
+#include <zmk/display.h>
 
 #include "animation.h"
 #include "animation_assets.h"
