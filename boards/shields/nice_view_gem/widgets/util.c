@@ -1,5 +1,5 @@
 #include <zephyr/kernel.h>
-#include <util.h>
+#include <prototype_mk1/util.h>
 #include <ctype.h>
 
 void to_uppercase(char *str) {

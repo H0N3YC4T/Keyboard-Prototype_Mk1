@@ -1,4 +1,5 @@
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
+  zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   # Expose the user config headers so the shield sources can include them.
   if(DEFINED ZMK_CONFIG)
     zephyr_library_include_directories(${ZMK_CONFIG}/include)
