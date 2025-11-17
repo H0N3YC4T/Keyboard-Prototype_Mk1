@@ -7,7 +7,7 @@
 #include "animation.h"
 #include "animation_assets.h"
 
-static enum nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
+static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 static bool nice_view_animation = true;
 
 static lv_coord_t nice_view_theme_offset = 1;
@@ -26,7 +26,7 @@ bool nice_view_animation_is_enabled(void) {
 
 void nice_view_theme_set(enum nice_view_theme theme) {
     if (theme >= NICE_VIEW_THEME_COUNT) {
-        theme = NICE_VIEW_THEME_CRYSTAL;
+        theme = NICE_VIEW_THEME_TRANSMUTATION;
     }
 
     current_theme = theme;
