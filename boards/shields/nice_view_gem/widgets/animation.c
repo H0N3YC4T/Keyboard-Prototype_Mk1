@@ -1,7 +1,6 @@
 // widgets/animation.c
 #include <stdlib.h>
 #include <zephyr/kernel.h>
-#include <zmk/display/status_screen.h>
 #include <lvgl.h>
 
 #include "animation.h"
