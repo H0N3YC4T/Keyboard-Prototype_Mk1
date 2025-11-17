@@ -1,23 +1,17 @@
-description: Nice!View animation + theme control
-compatible: "zmk,behavior-cycle-animation"
-include: one_param.yaml
+# SPDX-License-Identifier: MIT
 
-options:
-  param1:
-    values:
-      - value: NVC_TOG
-        display_name: Toggle animation
-        description: Toggle Nice!View animations on or off.
-        icon: "mdi:animation"
-      - value: NVC_OFF
-        display_name: Animations off
-        description: Disable animations and show a static frame.
-        icon: "mdi:animation-off"
-      - value: NVC_ON
-        display_name: Animations on
-        description: Enable animated playback for the current theme.
-        icon: "mdi:animation-play"
-      - value: NVC_NEXT
-        display_name: Next theme
-        description: Switch to the next Nice!View theme.
-        icon: "mdi:palette"
+compatible: "zmk,behavior-cycle-animation"
+
+description: |
+  Behavior that controls Nice!View theme and animation:
+  - Toggle animation
+  - Turn animation ON
+  - Turn animation OFF
+  - Cycle to next Nice!View theme
+
+include: 
+  - base-behavior.yaml
+
+properties:
+  "#binding-cells":
+    const: 1

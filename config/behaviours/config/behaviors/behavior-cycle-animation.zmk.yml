@@ -1,0 +1,21 @@
+id: behavior-cycle-animation
+name: "Nice!View Animation"
+type: behavior
+
+options:
+  param1:
+    name: "Action"
+    description: "Select animation or theme action."
+    values:
+      NVC_TOG:
+        name: "Toggle Animation"
+        icon: toggle_on
+      NVC_OFF:
+        name: "Animation Off"
+        icon: visibility_off
+      NVC_ON:
+        name: "Animation On"
+        icon: visibility
+      NVC_NEXT:
+        name: "Next Theme"
+        icon: brush
