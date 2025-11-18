@@ -20,7 +20,7 @@ static void calc_offset_for_theme(enum nice_view_theme theme);
 
 void nice_view_theme_init(void) {
     /* First draw will be triggered by display update */
-    zmk_display_request_update();
+    draw_animation();
 }
 
 bool nice_view_animation_is_enabled(void) {
@@ -31,9 +31,8 @@ void nice_view_theme_set(enum nice_view_theme theme) {
     if (theme >= NICE_VIEW_THEME_COUNT) {
         theme = NICE_VIEW_THEME_TRANSMUTATION;
     }
-
     current_theme = theme;
-    zmk_display_request_update();
+    draw_animation();
 }
 
 enum nice_view_theme nice_view_theme_get(void) {
@@ -48,20 +47,20 @@ void nice_view_theme_next(void) {
 
 void nice_view_animation_toggle(void) {
     nice_view_animation = !nice_view_animation;
-    zmk_display_request_update();
+    nice_view_theme_set(theme);
 }
 
 void nice_view_animation_off(void) {
     if (nice_view_animation) {
         nice_view_animation = false;
-        zmk_display_request_update();
+        nice_view_theme_set(theme);
     }
 }
 
 void nice_view_animation_on(void) {
     if (!nice_view_animation) {
         nice_view_animation = true;
-        zmk_display_request_update();
+        nice_view_theme_set(theme);
     }
 }
 
@@ -83,7 +82,7 @@ static void calc_offset_for_theme(enum nice_view_theme theme) {
     }
 }
 
-void draw_animation(lv_obj_t *canvas) {
+void draw_animation(void) {
     enum nice_view_theme theme = nice_view_theme_get();
     const lv_img_dsc_t * const *frames = nice_view_anim_sets[theme];
     const size_t frame_count = nice_view_anim_lengths[theme];
@@ -133,6 +132,7 @@ static void handle_cycle_animation_type(int type)
         break;
     }
 }
+
 // -----------------------------------------------------------------------------
 // Event listener: respond to cycle_animation_state_changed
 // -----------------------------------------------------------------------------
