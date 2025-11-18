@@ -17,9 +17,6 @@ static bool nice_view_animation = true;
 // Horizontal offset for centering the animation
 static lv_coord_t nice_view_theme_offset = 1;
 
-// Animation speed (ms)
-static const int nice_view_animation_speed = 1400;
-
 // The LVGL parent/screen we draw into (bound from outside)
 static lv_obj_t *nice_view_screen = NULL;
 
