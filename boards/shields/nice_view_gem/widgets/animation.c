@@ -5,7 +5,7 @@
 #include <zmk/display.h>
 
 #include <zmk/event_manager.h>
-#include <include/zmk/events/cycle_animation_state_changed.h>
+#include <zmk/events/cycle_animation_state_changed.h>
 
 #include "animation.h"
 #include "animation_assets.h"
