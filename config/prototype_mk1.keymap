@@ -97,8 +97,8 @@
             display-name = "Special";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
-&sys_reset  &bl BL_INC    &cy_anim 0    &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
-&none       &bl BL_TOG    &cy_anim 1    &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
+&none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
 &none       &bl BL_DEC    &none         &none         &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
                                         &none         &trans             &trans              &trans      &trans      &trans             &trans          &trans
             >;
