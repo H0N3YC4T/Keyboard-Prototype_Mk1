@@ -1,6 +1,6 @@
 if SHIELD_NICE_VIEW_GEM
 config NICE_VIEW_ANIMATION_THEME
-    default 0
+    int 0
 
 config LV_Z_VDB_SIZE
     default 100
