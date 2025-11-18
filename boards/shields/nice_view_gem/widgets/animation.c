@@ -25,9 +25,6 @@ static lv_obj_t *art_obj = NULL;
 
 // Forward decl
 static void calc_offset_for_theme(enum nice_view_theme theme);
-bool nice_view_animation_is_enabled(void) {
-    return nice_view_animation;
-}
 
 /* -------------------------------------------------------------------------- */
 /* Public helpers                                                             */
