@@ -18,7 +18,6 @@ struct behavior_change_animation_data {
 };
 
 struct cycle_animation_state_changed {
-    struct zmk_event_header header;
     struct behavior_change_animation_data data;
 };
 
