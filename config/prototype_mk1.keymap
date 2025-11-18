@@ -150,7 +150,7 @@
         layer_numpad {
             display-name = "Numpad";
             bindings = <
-&kp GRAVE  &trans               &trans     &trans     &trans     &trans                            &trans             &trans            &trans          &trans            &trans        &none
+&kp GRAVE  &trans               &trans     &trans     &trans     &trans                            &trans             &trans            &trans          &trans            &trans        &macro_default
 &trans     &kp LA(PRINTSCREEN)  &none      &none      &none      &none                             &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &trans
 &trans     &kp LC(A)            &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                         &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
 &trans     &kp LC(Z)            &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans  &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
@@ -165,7 +165,7 @@
         layer_mouse {
             display-name = "Mouse";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                        &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                        &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &macro_default
 &sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                  &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
 &none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                           &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
 &none       &bl BL_DEC    &none         &none         &none              &none               &none   &none   &kp LG(LC(F4))     &none           &none           &none            &none  &trans
@@ -180,7 +180,7 @@
         layer_gaming {
             display-name = "Gaming";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &macro_default
 &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                         &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH
 &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G                         &kp H   &kp J   &kp K      &kp L    &kp RET   &kp RET
 &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B   &trans     &trans     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
