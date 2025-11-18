@@ -22,4 +22,5 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
     zephyr_library_sources(widgets/animation_assets.c)
     zephyr_library_sources(widgets/screen_peripheral.c)
   endif()
+    zephyr_library_sources(widgets/cycle_animation_state_changed.c)  # <-- add this
 endif()
