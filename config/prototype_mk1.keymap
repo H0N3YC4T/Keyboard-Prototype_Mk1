@@ -97,9 +97,7 @@
                                         &kp LALT  &kp LGUI  &mo 1   &kp ENTER  &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp UP_ARROW DOWN_ARROW>,
-                <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp RIGHT LEFT>;
         };
 
         layer_lower {
@@ -157,9 +155,7 @@
                                                     &kp LEFT_ALT      &kp LWIN  &none           &kp ENTER  &kp ENTER  &none  &kp BACKSPACE   &kp LWIN
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>,
-                <&inc_dec_kp LC(Y) LC(Z)>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp UP DOWN>;
 
             label = "Arrows";
         };
