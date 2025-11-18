@@ -24,7 +24,6 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #if IS_ENABLED(CONFIG_ZMK_BEHAVIOR_METADATA)
 
-/* Only two possible values now */
 static const struct behavior_parameter_value_metadata param_values[] = {
     {
         .display_name = "Toggle Animation Movement",
@@ -53,15 +52,20 @@ static const struct behavior_parameter_metadata metadata = {
 static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
                                      struct zmk_behavior_binding_event event)
 {
-    struct behavior_change_animation_data data = {0};
+    struct cycle_animation_state_changed *evt =
+        new_cycle_animation_state_changed();
+
+    if (!evt) {
+        return -ENOMEM;
+    }
 
     switch (binding->param1) {
     case NVC_TOGGLE:
-        data.type = NVC_TOGGLE;
+        evt->type = NVC_TOGGLE;
         break;
 
     case NVC_NEXT:
-        data.type = NVC_NEXT;
+        evt->type = NVC_NEXT;
         break;
 
     default:
@@ -69,13 +73,7 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
         return -ENOTSUP;
     }
 
-    int ret = raise_zmk_change_animation_event(data);
-    if (ret < 0) {
-        LOG_ERR("Failed to raise cycle_animation_state_changed event: %d", ret);
-        return ret;
-    }
-
-    return ZMK_BEHAVIOR_OPAQUE;
+    return ZMK_EVENT_RAISE(*evt);
 }
 
 static int on_keymap_binding_released(struct zmk_behavior_binding *binding,
