@@ -1,4 +1,5 @@
 #include <zephyr/kernel.h>
+#include <string.h>
 #include "util.h"
 #include <ctype.h>
 
