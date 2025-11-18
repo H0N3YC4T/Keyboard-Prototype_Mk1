@@ -3,5 +3,5 @@ name: Keyboard-Prototype_Mk1
 build:
   cmake: .
   settings:
-    board_root: boards
+    board_root: .
     dts_root: app
