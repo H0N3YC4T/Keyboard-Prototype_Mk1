@@ -43,6 +43,7 @@
             compatible = "zmk,behavior-key-toggle";
             label = "TOG_ON";
             #binding-cells = <1>;
+            toggle-mode = "on";
         };
 
         tog_off: tog_off {
@@ -57,21 +58,27 @@
         macro_mouse: macro_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog_off N5 &tog_off N6 &tog_on N4>;
+            bindings = <&tog_off 5 &tog_off 6 &tog_on 4>;
             label = "MACRO_MOUSE";
         };
 
         macro_numpad: macro_numpad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&tog_off 4 &tog_off 6 &tog_on 5>;
             label = "MACRO_NUMPAD";
         };
 
         macro_gaming: macro_gaming {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&tog_off 4 &tog_off 5 &tog_on 6>;
+            label = "MACRO_GAMING";
+        };
+        macro_default: macro_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 4 &tog_off 5 &tog_off 6>;
             label = "MACRO_GAMING";
         };
     };
