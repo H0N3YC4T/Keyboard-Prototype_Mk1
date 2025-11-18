@@ -111,6 +111,10 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     lv_obj_align(top, LV_ALIGN_TOP_RIGHT, 0, 0);
     lv_canvas_set_buffer(top, widget->cbuf, BUFFER_SIZE, BUFFER_SIZE, LV_IMG_CF_TRUE_COLOR);
 
+    /* (previously nothing here) */
+    /* NEW: Tell animation.c which LVGL object to render into */
+    nice_view_bind_screen(widget->obj);
+
     draw_animation(widget->obj);
 
     sys_slist_append(&widgets, &widget->node);
@@ -119,5 +123,6 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 
     return 0;
 }
+
 
 lv_obj_t *zmk_widget_screen_obj(struct zmk_widget_screen *widget) { return widget->obj; }
