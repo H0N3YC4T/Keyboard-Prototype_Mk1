@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&tog_off 4 &tog_off 5 &tog_off 6>;
-            label = "MACRO_GAMING";
+            label = "MACRO_DEFAULT";
         };
     };
 
