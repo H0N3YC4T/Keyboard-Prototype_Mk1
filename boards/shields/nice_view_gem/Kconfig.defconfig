@@ -1,12 +1,12 @@
 if SHIELD_NICE_VIEW_GEM
 config NICE_VIEW_ANIMATION_THEME_0
-    default n
+    bool n
 config NICE_VIEW_ANIMATION_THEME_1
-    default n
+    bool n
 config NICE_VIEW_ANIMATION_THEME_2
-    default n
+    bool n
 config NICE_VIEW_ANIMATION_THEME_3
-    default n
+    bool n
 
 
 config LV_Z_VDB_SIZE
