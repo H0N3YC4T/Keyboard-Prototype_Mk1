@@ -46,9 +46,6 @@
                 <&inc_dec_kp RIGHT LEFT>;
         };
 
-        // ------------------------------------------------------------------------------------------------------------
-        // ------------------------------------------------------------------------------------------------------------
-
         layer_lower {
             display-name = "Lower";
             bindings = <
@@ -63,9 +60,6 @@
                 <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>,
                 <&inc_dec_kp LC(Y) LC(Z)>;
         };
-
-        // ------------------------------------------------------------------------------------------------------------
-        // ------------------------------------------------------------------------------------------------------------
 
         layer_upper {
             display-name = "Raise";
@@ -82,11 +76,38 @@
                 <&inc_dec_kp C_AL_NEXT_TASK C_AL_PREVIOUS_TASK>;
         };
 
-        // ------------------------------------------------------------------------------------------------------------
-        // ------------------------------------------------------------------------------------------------------------
-
         layer_settings {
             display-name = "Settings";
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &none   &none   &none  &none  &none
+&sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &none   &none   &none  &none  &trans
+&none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &none   &none   &none  &none  &none
+&none       &bl BL_DEC    &none         &none         &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none   &none   &none  &none  &trans
+                                        &trans        &trans             &trans              &trans      &trans      &trans             &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        layer_numpad {
+            display-name = "Numpad";
+            bindings = <
+&kp GRAVE  &trans               &trans     &trans     &trans     &trans                               &trans             &trans            &trans          &trans            &trans        &none
+&trans     &kp LA(PRINTSCREEN)  &none      &none      &none      &none                                &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
+&trans     &kp LC(A)            &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                            &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
+&trans     &kp LC(Z)            &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans     &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
+                                           &trans     &trans     &trans            &kp SPACE  &trans  &trans             &trans            &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>,
+                <&inc_dec_kp LC(Y) LC(Z)>;
+        };
+
+        layer_mouse {
+            display-name = "Mouse";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
 &sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
@@ -109,21 +130,6 @@
 &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B   &trans     &trans     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &trans  &trans  &trans  &kp SPACE  &kp SPACE  &trans  &trans  &trans
             >;
-        };
-
-        layer_6 {
-            display-name = "Settings";
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
-&sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
-&none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none       &bl BL_DEC    &none         &none         &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
-                                        &none         &trans             &trans              &trans      &trans      &trans             &trans          &trans
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
