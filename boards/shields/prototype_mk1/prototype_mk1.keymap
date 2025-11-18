@@ -4,15 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
 
 #define BASE 0
 #define LOWER 1
@@ -32,9 +29,10 @@
     };
 
     behaviors {
-       cy_anim: cy_anim {
+        cy_anim: cy_anim {
             compatible = "zmk,behavior-cycle-animation";
             #binding-cells = <1>;
+            label = "Cycle Animation";
         };
     };
 
@@ -47,7 +45,7 @@
 &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
 &kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                         &kp Y   &kp U     &kp I      &kp O    &kp P     &kp DELETE
 &kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                         &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &nvc NVC_NEXT     &nvc NVC_TOG     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &trans     &trans     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &kp LALT  &kp LGUI  &mo 1   &kp ENTER  &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
             >;
 
@@ -91,17 +89,18 @@
                 <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
                 <&inc_dec_kp C_AL_NEXT_TASK C_AL_PREVIOUS_TASK>;
         };
+
         // ------------------------------------------------------------------------------------------------------------
         // ------------------------------------------------------------------------------------------------------------
 
         layer_special {
             display-name = "Special";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1        &bt BT_SEL 2    &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
-&sys_reset  &bl BL_INC    &cy_anim 0          &none           &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
-&none       &bl BL_TOG    &cy_anim 1          &none           &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none       &bl BL_DEC    &none               &none           &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
-                                              &none           &trans             &trans              &trans      &trans      &trans             &trans          &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
+&sys_reset  &bl BL_INC    &cy_anim      &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
+&none       &bl BL_TOG    &cy_anim 1    &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none       &bl BL_DEC    &none         &none         &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
+                                        &none         &trans             &trans              &trans      &trans      &trans             &trans          &trans
             >;
 
             sensor-bindings =
