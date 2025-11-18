@@ -16,11 +16,6 @@ enum nice_view_theme {
 
 
 /**
- * @brief Holds the value that determins the animation speed
- */
-const int nice_view_animation_speed = 1400;
-
-/**
  * @brief Return whether animation mode is enabled (true) or static-image mode (false).
  */
 bool nice_view_animation_is_enabled(void);
