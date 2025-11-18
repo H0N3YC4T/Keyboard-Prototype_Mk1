@@ -1,7 +1,6 @@
 name: Keyboard-Prototype_Mk1
 
 build:
-  kconfig: app/Kconfig
   settings:
     board_root: boards
     dts_root: app
