@@ -91,11 +91,11 @@
         layer_settings {
             display-name = "Settings";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &kp LG(LC(D))      &none   &none   &none  &none  &none
-&sys_reset         &bl BL_INC    &none         &none         &none         &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &none   &none   &none  &none  &none
-&ext_power EP_TOG  &bl BL_TOG    &none         &none         &none         &kp RG(E)                                   &kp LG(LC(LEFT))   &none   &none   &none  &none  &none
-&studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none   &none   &none  &none  &none
-                                               &trans        &trans        &trans              &trans      &trans      &trans             &trans  &trans
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &none           &none              &none   &none  &none  &none
+&sys_reset         &bl BL_INC    &none         &none         &none         &kp RS(RC(ESCAPE))                          &none           &none              &none   &none  &none  &none
+&ext_power EP_TOG  &bl BL_TOG    &none         &none         &none         &kp RG(E)                                   &kp LG(LC(D))   &kp LG(LC(RIGHT))  &none   &none  &none  &none
+&studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))  &kp LG(LC(LEFT))   &none   &none  &none  &none
+                                               &trans        &trans        &trans              &trans      &trans      &trans          &trans             &trans
             >;
 
             sensor-bindings =
