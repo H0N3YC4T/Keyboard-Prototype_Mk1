@@ -20,7 +20,7 @@ bool nice_view_animation_is_enabled(void);
 void nice_view_theme_init(void);
 
 // Draw the current theme onto the given canvas
-void draw_animation(lv_obj_t *canvas);
+void draw_animation(void);
 
 // Theme control API
 void nice_view_theme_set(enum nice_view_theme theme);
