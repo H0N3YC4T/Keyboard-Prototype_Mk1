@@ -12,16 +12,16 @@
 
 // Current theme and animation state
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
-#if (NICE_VIEW_ANIMATION_THEME = 0)
+#if (NICE_VIEW_ANIMATION_THEME_0)
 nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 #endif
-#if (NICE_VIEW_ANIMATION_THEME = 1)
+#if (NICE_VIEW_ANIMATION_THEME_1)
 nice_view_theme current_theme = NICE_VIEW_THEME_OMNISSIAH;
 #endif
-#if (NICE_VIEW_ANIMATION_THEME = 2)
+#if (NICE_VIEW_ANIMATION_THEME_2)
 nice_view_theme current_theme = NICE_VIEW_THEME_ULTRAMAR;
 #endif
-#if (NICE_VIEW_ANIMATION_THEME = 3)
+#if (NICE_VIEW_ANIMATION_THEME_3)
 nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
 #endif
 
