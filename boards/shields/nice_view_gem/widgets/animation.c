@@ -144,7 +144,7 @@ static int nice_view_cycle_animation_listener(const struct zmk_event_header *eh)
         return 0;
     }
 
-    handle_cycle_animation_type(evt->data.type);
+    handle_cycle_animation_type(evt->type);
     return 0;
 }
 
