@@ -28,14 +28,6 @@
         };
     };
 
-    behaviors {
-        cy_anim: cy_anim {
-            compatible = "zmk,behavior-cycle-animation";
-            #binding-cells = <1>;
-            label = "Cycle Animation";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -45,7 +37,7 @@
 &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
 &kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                         &kp Y   &kp U     &kp I      &kp O    &kp P     &kp DELETE
 &kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                         &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &tog 4     &tog 5     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &tog 0     &tog 4     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &kp LALT  &kp LGUI  &mo 1   &kp ENTER  &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
             >;
 
@@ -108,17 +100,17 @@
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        layer_4 {
+        layer_gaming {
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4  &kp N5                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W   &kp E     &kp R   &kp T                         &kp Y   &kp U     &kp I      &kp O    &kp P     &kp DEL
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F   &kp G                         &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V   &kp B   &tog 4     &tog 4     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp LALT  &none   &none   &kp SPACE  &kp SPACE  &trans  &kp BSPC  &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                         &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH
+&kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G                         &kp H   &kp J   &kp K      &kp L    &kp RET   &kp RET
+&kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B   &tog 4     &tog 4     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                           &trans  &trans  &trans  &kp SPACE  &kp SPACE  &trans  &trans  &trans
             >;
         };
 
-        layer_5 {
+        layer_reserved {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
