@@ -8,7 +8,7 @@
 #include "animation_assets.h"
 
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
-static const int nice_view_animation_speed = 1400;
+static const int nice_view_animation_speed = 1100;
 static bool nice_view_animation = true;
 static lv_coord_t nice_view_theme_offset = 1;
 
