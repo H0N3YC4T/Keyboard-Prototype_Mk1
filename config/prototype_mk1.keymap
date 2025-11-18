@@ -28,17 +28,29 @@
         };
     };
 
+    behaviors {
+        hold_esc: hold_esc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_ESC";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <80>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                         &kp Y   &kp U     &kp I      &kp O    &kp P     &kp DELETE
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                         &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &trans     &trans     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp ENTER  &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
+&hold_esc ESCAPE GRAVE  &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB                 &kp Q   &kp W   &kp E     &kp R     &kp T                         &kp Y   &kp U     &kp I      &kp O    &kp P     &kp DELETE
+&kp LCTRL               &kp A   &kp S   &kp D     &kp F     &kp G                         &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT               &kp Z   &kp X   &kp C     &kp V     &kp B   &trans     &trans     &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                        &kp LALT  &kp LGUI  &mo 1   &kp ENTER  &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
             >;
 
             sensor-bindings =
@@ -49,11 +61,11 @@
         layer_lower {
             display-name = "Lower";
             bindings = <
-&kp GRAVE  &trans               &trans     &trans     &trans     &trans                               &trans             &trans            &trans          &trans            &trans        &none
-&trans     &kp LA(PRINTSCREEN)  &none      &none      &none      &none                                &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
-&trans     &kp LC(A)            &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                            &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
-&trans     &kp LC(Z)            &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans     &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
-                                           &trans     &trans     &trans            &kp SPACE  &trans  &trans             &trans            &trans
+&kp ESC  &trans               &trans     &trans     &trans     &trans                               &trans             &trans            &trans          &trans            &trans        &none
+&trans   &kp LA(PRINTSCREEN)  &none      &none      &none      &none                                &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
+&trans   &kp LC(A)            &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                            &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
+&trans   &kp LC(Z)            &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans     &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
+                                         &trans     &trans     &trans            &kp SPACE  &trans  &trans             &trans            &trans
             >;
 
             sensor-bindings =
@@ -109,11 +121,11 @@
         layer_mouse {
             display-name = "Mouse";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
-&sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                          &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
-&none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                                   &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none       &bl BL_DEC    &none         &none         &none              &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))     &none           &none           &none            &none  &trans
-                                        &none         &trans             &trans              &trans      &trans      &trans             &trans          &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                        &kp LG(LC(D))      &kp LS(TAB)     &kp ENTER       &kp TAB          &none  &none
+&sys_reset  &bl BL_INC    &none         &none         &studio_unlock     &kp RS(RC(ESCAPE))                  &kp LG(LC(RIGHT))  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &trans
+&none       &bl BL_TOG    &none         &none         &ext_power EP_TOG  &kp RG(E)                           &kp LG(LC(LEFT))   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none       &bl BL_DEC    &none         &none         &none              &none               &none   &none   &kp LG(LC(F4))     &none           &none           &none            &none  &trans
+                                        &trans        &trans             &trans              &trans  &trans  &trans             &trans          &trans
             >;
 
             sensor-bindings =
