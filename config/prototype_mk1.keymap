@@ -150,7 +150,7 @@
         layer_numpad {
             display-name = "Numpad";
             bindings = <
-&kp GRAVE          &none             &none           &none             &none         &none                &none  &none  &none  &none  &none  &macro_default
+&none              &none             &none           &none             &none         &none                &none  &none  &none  &none  &none  &macro_default
 &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &none                &none  &none  &none  &none  &none  &none
 &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none                &none  &none  &none  &none  &none  &none
 &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &none  &none  &none  &none  &none  &none  &none  &none  &none
