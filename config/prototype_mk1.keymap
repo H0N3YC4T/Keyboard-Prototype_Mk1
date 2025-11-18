@@ -38,6 +38,42 @@
             flavor = "tap-preferred";
             tapping-term-ms = <80>;
         };
+
+        tog_on: tog_on {
+            compatible = "zmk,behavior-key-toggle";
+            label = "TOG_ON";
+            #binding-cells = <1>;
+        };
+
+        tog_off: tog_off {
+            compatible = "zmk,behavior-key-toggle";
+            label = "TOG_OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
+    };
+
+    macros {
+        macro_mouse: macro_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off N5 &tog_off N6 &tog_on N4>;
+            label = "MACRO_MOUSE";
+        };
+
+        macro_numpad: macro_numpad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "MACRO_NUMPAD";
+        };
+
+        macro_gaming: macro_gaming {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "MACRO_GAMING";
+        };
     };
 
     keymap {
