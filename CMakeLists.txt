@@ -5,8 +5,6 @@ zephyr_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 zephyr_library()
 
-zephyr_library_sources($(shell find ${CMAKE_CURRENT_SOURCE_DIR}/app/src -name "*.c"))
-
 set_source_files_properties(
         ${APPLICATION_SOURCE_DIR}/app/src/behaviors/behavior_cycle_animation.c
         TARGET_DIRECTORY app
