@@ -5,13 +5,16 @@
 
 #define DT_DRV_COMPAT zmk_behavior_cycle_animation
 
+#include <zephyr/kernel.h>
+
+#include <zmk/event_manager.h>
 #include <zephyr/device.h>
 #include <drivers/behavior.h>
 #include <zephyr/logging/log.h>
 
 #include <zmk/behavior.h>
 #include <zmk/keymap.h>
-#include <zmk/event_manager.h>
+
 
 #include <zmk/events/cycle_animation_state_changed.h>
 
