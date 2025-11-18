@@ -133,7 +133,7 @@
         layer_settings {
             display-name = "Settings";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &macro_numpad   &macro_mouse       &macro_gaming  &none  &none  &macro_default
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none 
 &sys_reset         &bl BL_INC    &none         &none         &none         &kp RS(RC(ESCAPE))                          &none           &none              &none          &none  &none  &none
 &ext_power EP_TOG  &bl BL_TOG    &none         &none         &none         &kp RG(E)                                   &kp LG(LC(D))   &kp LG(LC(RIGHT))  &none          &none  &none  &none
 &studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))  &kp LG(LC(LEFT))   &none          &none  &none  &none
@@ -148,7 +148,7 @@
         layer_arrows {
             display-name = "Arrows";
             bindings = <
-&kp ESCAPE        &none             &none           &none             &none     &macro_default                        &none  &none           &none           &none            &none  &macro_default
+&kp ESCAPE        &none             &none           &none             &none     &macro_default                        &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none 
 &kp TAB           &kp HOME          &kp UP_ARROW    &kp END           &none     &none                                 &none  &kp HOME        &kp UP_ARROW    &kp END          &none  &kp TAB
 &kp LEFT_CONTROL  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none     &none                                 &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_CONTROL
 &kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none           &none      &none      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_SHIFT
@@ -163,7 +163,7 @@
         layer_mouse {
             display-name = "Mouse";
             bindings = <
-&kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &macro_default                      &none  &none          &none     &none  &none  &macro_default
+&kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &macro_default                      &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none  
 &kp TAB           &mkp MB1          &mmv MOVE_UP    &mkp MB2          &none         &none                               &none  &none          &none     &none  &none  &kp TAB
 &kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                               &none  &none          &none     &none  &none  &kp LEFT_CONTROL
 &kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &none           &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
