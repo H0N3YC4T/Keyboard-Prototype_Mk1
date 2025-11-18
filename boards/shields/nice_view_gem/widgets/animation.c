@@ -158,7 +158,6 @@ void draw_animation(lv_obj_t *canvas) {
 /* -------------------------------------------------------------------------- */
 /* Event listener: respond to cycle_animation_state_changed                   */
 /* -------------------------------------------------------------------------- */
-
 static void handle_cycle_animation_type(int type) {
     switch (type) {
     case NVC_TOGGLE:
@@ -175,9 +174,10 @@ static void handle_cycle_animation_type(int type) {
     }
 }
 
-static int nice_view_cycle_animation_listener(const struct zmk_event_header *eh) {
+static int nice_view_cycle_animation_listener(const zmk_event_t *eh)
+{
     const struct cycle_animation_state_changed *evt =
-        cast_cycle_animation_state_changed(eh);
+        as_cycle_animation_state_changed(eh);
     if (!evt) {
         return 0;
     }
