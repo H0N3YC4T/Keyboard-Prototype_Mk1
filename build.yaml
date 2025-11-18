@@ -15,10 +15,45 @@ include:
 
   - board: nice_nano_v2
     shield: prototype_mk1_left nice_view_adapter nice_view_gem
-    artifact-name: left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: left_TRANSMUTATION
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=0
 
   - board: nice_nano_v2
     shield: prototype_mk1_right nice_view_adapter nice_view_gem
-    artifact-name: right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: right_TRANSMUTATION
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=0
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_left nice_view_adapter nice_view_gem
+    artifact-name: left_OMNISSIAH
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=1
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_right nice_view_adapter nice_view_gem
+    artifact-name: right_OMNISSIAH
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=1
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_left nice_view_adapter nice_view_gem
+    artifact-name: left_ULTRAMAR
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=2
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_right nice_view_adapter nice_view_gem
+    artifact-name: right_ULTRAMAR
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=2
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_left nice_view_adapter nice_view_gem
+    artifact-name: left_CRYSTAL
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=3
+
+  - board: nice_nano_v2
+    shield: prototype_mk1_right nice_view_adapter nice_view_gem
+    artifact-name: right_CRYSTAL
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_NICE_VIEW_ANIMATION_THEME=3
+
+
+
+
+

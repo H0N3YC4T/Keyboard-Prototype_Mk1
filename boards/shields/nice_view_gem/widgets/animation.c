@@ -12,7 +12,21 @@
 
 // Current theme and animation state
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
+#if (NICE_VIEW_ANIMATION_THEME = 0)
+nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
+#endif
+#if (NICE_VIEW_ANIMATION_THEME = 1)
+nice_view_theme current_theme = NICE_VIEW_THEME_OMNISSIAH;
+#endif
+#if (NICE_VIEW_ANIMATION_THEME = 2)
+nice_view_theme current_theme = NICE_VIEW_THEME_ULTRAMAR;
+#endif
+#if (NICE_VIEW_ANIMATION_THEME = 3)
+nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
+#endif
+
 static bool nice_view_animation = true;
+
 static const int nice_view_animation_speed = 1400;
 
 // Horizontal offset for centering the animation
