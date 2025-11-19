@@ -15,6 +15,10 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define SETTINGS 4
+#define ARROWS 5
+#define MOUSE 6
+#define GAMES 7
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -37,20 +41,6 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <80>;
-        };
-
-        tog_on: tog_on {
-            compatible = "zmk,behavior-key-toggle";
-            label = "TOG_ON";
-            #binding-cells = <1>;
-            toggle-mode = "on";
-        };
-
-        tog_off: tog_off {
-            compatible = "zmk,behavior-key-toggle";
-            label = "TOG_OFF";
-            #binding-cells = <1>;
-            toggle-mode = "off";
         };
     };
 
