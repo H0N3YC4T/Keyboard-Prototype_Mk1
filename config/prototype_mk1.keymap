@@ -73,11 +73,11 @@
         layer_lower {
             display-name = "Lower";
             bindings = <
-&kp ESC  &trans               &trans     &trans     &trans     &trans                               &trans             &trans            &trans          &trans            &trans        &none
-&trans   &kp LA(PRINTSCREEN)  &none      &none      &none      &none                                &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
-&trans   &kp LC(A)            &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                            &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
-&trans   &kp LC(Z)            &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans     &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
-                                         &trans     &trans     &trans            &kp SPACE  &trans  &trans             &trans            &trans
+&kp ESC  &trans          &trans     &trans     &trans     &trans                               &trans             &trans            &trans          &trans            &trans        &none
+&trans   &kp LC(LS(N4))  &none      &none      &none      &none                                &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
+&trans   &kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                            &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
+&trans   &kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &trans     &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
+                                    &trans     &trans     &trans            &kp SPACE  &trans  &trans             &trans            &trans
             >;
 
             sensor-bindings =
