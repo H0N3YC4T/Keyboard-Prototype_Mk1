@@ -1,4 +1,21 @@
 if SHIELD_NICE_VIEW_GEM
+
+NICE_VIEW_ANIMATION_THEME_0
+    bool "ANIMATION"
+    default n
+NICE_VIEW_ANIMATION_THEME_1
+    bool "ANIMATION"
+    default n
+NICE_VIEW_ANIMATION_THEME_2
+    bool "ANIMATION"
+    default n
+NICE_VIEW_ANIMATION_THEME_3
+    bool "ANIMATION"
+    default n
+NICE_VIEW_ANIMATION_THEME_4
+    bool "ANIMATION"
+    default n
+
 config LV_Z_VDB_SIZE
     default 100
 
