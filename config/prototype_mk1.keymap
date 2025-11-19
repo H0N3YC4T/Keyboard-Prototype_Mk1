@@ -151,7 +151,7 @@
 &kp ESCAPE        &none             &none           &none             &none     &macro_default                        &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none 
 &kp TAB           &kp HOME          &kp UP_ARROW    &kp END           &none     &none                                 &none  &kp HOME        &kp UP_ARROW    &kp END          &none  &kp TAB
 &kp LEFT_CONTROL  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none     &none                                 &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_CONTROL
-&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none           &none      &none      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_SHIFT
+&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none           &none      &none      &none  &kp LS(LEFT_WIN)  &kp LG(Z)  &kp LA(LEFT_WIN)  &none  &kp LEFT_SHIFT
                                                     &kp LEFT_ALT      &kp LWIN  &none           &kp ENTER  &kp ENTER  &none  &kp BACKSPACE   &kp LWIN
             >;
 
@@ -166,7 +166,7 @@
 &kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &macro_default                      &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none  
 &kp TAB           &mkp MB1          &mmv MOVE_UP    &mkp MB2          &none         &none                               &none  &none          &none     &none  &none  &kp TAB
 &kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                               &none  &none          &none     &none  &none  &kp LEFT_CONTROL
-&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &none           &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
+&kp LEFT_SHIFT    &none     &none  &none  &none  &none           &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
                                                     &kp LEFT_ALT      &kp LWIN      &none           &mkp MB1  &mkp MB1  &none  &kp BACKSPACE  &kp LWIN
             >;
 
