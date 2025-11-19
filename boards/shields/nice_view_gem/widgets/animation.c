@@ -9,7 +9,7 @@
 
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 static const int nice_view_animation_speed = 960;
-static bool nice_view_animation = true;
+static bool nice_view_animation = false;
 static lv_coord_t nice_view_theme_offset = 1;
 
 
