@@ -26,7 +26,7 @@ nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
 #endif
 
 static bool nice_view_animation = true;
-#IF !NICE_VIEW_ANIMATION
+#IF !NICE_VIEW_GEM_ANIMATION
 nice_view_animation = false;
 #ENDIF
 
