@@ -164,8 +164,8 @@
             display-name = "Mouse";
             bindings = <
 &kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &macro_default                      &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none  
-&kp TAB           &mkp MB1          &mmv MOVE_UP    &mkp MB2          &none         &none                               &none  &none          &none     &none  &none  &kp TAB
-&kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                               &none  &none          &none     &none  &none  &kp LEFT_CONTROL
+&kp TAB           &mkp MB2          &mmv MOVE_UP    &mkp MB1          &none         &none                               &none  &mkp MB1          &mmv MOVE_UP    &mkp MB2  &none  &kp TAB
+&kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                               &none  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &kp LEFT_CONTROL
 &kp LEFT_SHIFT    &none     &none  &none  &none  &none           &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
                                                     &kp LEFT_ALT      &kp LWIN      &none           &mkp MB1  &mkp MB1  &none  &kp BACKSPACE  &kp LWIN
             >;
