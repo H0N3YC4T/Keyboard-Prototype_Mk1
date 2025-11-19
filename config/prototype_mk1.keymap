@@ -54,36 +54,6 @@
         };
     };
 
-    macros {
-        macro_mouse: macro_mouse {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_off 5 &tog_off 6 &tog_on 4>;
-            label = "MACRO_MOUSE";
-        };
-
-        macro_numpad: macro_numpad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_off 4 &tog_off 6 &tog_on 5>;
-            label = "MACRO_NUMPAD";
-        };
-
-        macro_gaming: macro_gaming {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_off 4 &tog_off 5 &tog_on 6>;
-            label = "MACRO_GAMING";
-        };
-
-        macro_default: macro_default {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_off 4 &tog_off 5 &tog_off 6>;
-            label = "MACRO_DEFAULT";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -133,10 +103,10 @@
         layer_settings {
             display-name = "Settings";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none 
-&sys_reset         &bl BL_INC    &none         &none         &none         &kp RS(RC(ESCAPE))                          &none           &none              &none          &none  &none  &none
-&ext_power EP_TOG  &bl BL_TOG    &none         &none         &none         &kp RG(E)                                   &kp LG(LC(D))   &kp LG(LC(RIGHT))  &none          &none  &none  &none
-&studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))  &kp LG(LC(LEFT))   &none          &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &tog 4          &tog 5             &tog 6  &none  &none  &none
+&sys_reset         &bl BL_INC    &none         &none         &none         &kp RS(RC(ESCAPE))                          &none           &none              &none   &none  &none  &none
+&ext_power EP_TOG  &bl BL_TOG    &none         &none         &none         &kp RG(E)                                   &kp LG(LC(D))   &kp LG(LC(RIGHT))  &none   &none  &none  &none
+&studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))  &kp LG(LC(LEFT))   &none   &none  &none  &none
                                                &trans        &trans        &trans              &trans      &trans      &trans          &trans             &trans
             >;
 
@@ -148,11 +118,11 @@
         layer_arrows {
             display-name = "Arrows";
             bindings = <
-&kp ESCAPE        &none             &none           &none             &none     &macro_default                        &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none 
-&kp TAB           &kp HOME          &kp UP_ARROW    &kp END           &none     &none                                 &none  &kp HOME        &kp UP_ARROW    &kp END          &none  &kp TAB
-&kp LEFT_CONTROL  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none     &none                                 &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_CONTROL
-&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none           &none      &none      &none  &kp LS(LEFT_WIN)  &kp LG(Z)  &kp LA(LEFT_WIN)  &none  &kp LEFT_SHIFT
-                                                    &kp LEFT_ALT      &kp LWIN  &none           &kp ENTER  &kp ENTER  &none  &kp BACKSPACE   &kp LWIN
+&kp ESCAPE        &none             &none           &none             &none     &none                        &none  &none           &none           &none            &none  &tog 4
+&kp TAB           &kp HOME          &kp UP_ARROW    &kp END           &none     &none                        &none  &kp HOME        &kp UP_ARROW    &kp END          &none  &kp TAB
+&kp LEFT_CONTROL  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none     &none                        &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_CONTROL
+&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none  &none      &none      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_SHIFT
+                                                    &kp LEFT_ALT      &kp LWIN  &none  &kp ENTER  &kp ENTER  &none  &kp BACKSPACE   &kp LWIN
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp UP DOWN>;
@@ -163,11 +133,11 @@
         layer_mouse {
             display-name = "Mouse";
             bindings = <
-&kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &macro_default                      &macro_default &macro_numpad   &macro_mouse       &macro_gaming  &none  &none  
-&kp TAB           &mkp MB2          &mmv MOVE_UP    &mkp MB1          &none         &none                               &none  &mkp MB1          &mmv MOVE_UP    &mkp MB2  &none  &kp TAB
-&kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                               &none  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &kp LEFT_CONTROL
-&kp LEFT_SHIFT    &none     &none  &none  &none  &none           &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
-                                                    &kp LEFT_ALT      &kp LWIN      &none           &mkp MB1  &mkp MB1  &none  &kp BACKSPACE  &kp LWIN
+&kp ESCAPE        &kp LS(TAB)       &kp ENTER       &kp TAB           &none         &none                      &none  &none          &none     &none  &none  &tog 5
+&kp TAB           &mkp MB1          &mmv MOVE_UP    &mkp MB2          &none         &none                      &none  &none          &none     &none  &none  &kp TAB
+&kp LEFT_CONTROL  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none         &none                      &none  &none          &none     &none  &none  &kp LEFT_CONTROL
+&kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &none  &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
+                                                    &kp LEFT_ALT      &kp LWIN      &none  &mkp MB1  &mkp MB1  &none  &kp BACKSPACE  &kp LWIN
             >;
 
             label = "Mouse";
@@ -176,7 +146,7 @@
         layer_gaming {
             display-name = "Gaming";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &macro_default
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &tog 6
 &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                         &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH
 &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G                         &kp H   &kp J   &kp K      &kp L    &kp RET   &kp RET
 &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B   &none      &none      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
