@@ -1,0 +1,203 @@
+layout: {zmk_keyboard: prototype_mk1}
+layers:
+  Base:
+  - - {t: '`', h: ESCAPE}
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - '-'
+    - TAB
+    - Q
+  - [W, E, R, T, Y, U, I, O, P, DELETE, LCTRL, A, S, D]
+  - [F, G, H, J, K, L, ;, '''', LSHFT, Z, X, C, V, B]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - N
+    - M
+    - ','
+    - .
+    - /
+    - RSHFT
+    - LALT
+    - LGUI
+    - Lower
+    - ENTER
+    - SPACE
+    - Raise
+  - [BSPC, RGUI]
+  Lower:
+  - - ESC
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+    - {t: ▽, type: trans}
+    - 'SCREENSHOT TO CLIPBOARD'
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - HOME
+    - UP ARROW
+    - END
+    - ''
+    - DELETE
+    - {t: ▽, type: trans}
+    - 'SELECT ALL'
+    - 'SAVE'
+    - Ctl+D
+  - - 'FIND'
+    - 'FIND NEXT'
+    - ''
+    - LEFT ARROW
+    - DOWN ARROW
+    - RIGHT ARROW
+    - ''
+    - ''
+    - {t: ▽, type: trans}
+    - 'UNDO'
+    - 'CUT'
+    - 'COPY'
+    - 'PASTE'
+    - '['
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ']'
+    - 'POSITION MOD'
+    - 'POSITION MENU'
+    - 'MOVE MOD'
+    - 'WIN'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - SPACE
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  Raise:
+  - - '`'
+    - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - F7
+    - F8
+    - F9
+    - F10
+    - F11
+    - {t: ▽, type: trans}
+    - '1'
+  - - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - F12
+    - {t: ▽, type: trans}
+    - '!'
+    - '@'
+    - '#'
+  - - $
+    - '%'
+    - ^
+    - '&'
+    - '*'
+    - (
+    - )
+    - '|'
+    - {t: ▽, type: trans}
+    - '='
+    - '-'
+    - +
+    - ''
+    - (
+  - - ''
+    - 'ALT TAB'
+    - )
+    - ''
+    - ;
+    - ':'
+    - \
+    - RIGHT SHIFT
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  Settings:
+  - - BT CLR
+    - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3'}
+    - {t: BT, h: '4'}
+    - 'LAYER DEFAULT'
+    - 'LAYER ARROWS'
+    - 'LAYER MOUSE'
+    - 'LAYER GAMING'
+    - ''
+    - ''
+    - 'SYSTEM RESET'
+    - 'BACKLIGHT INC'
+  - ['', '', '', 'TASK MANAGER', '', '', '', '', '', '', 'DISPLAY POWER', 'BACKLIGHT TOGGLE', '', '']
+  - ['', 'EXPLORER', 'DESKTOP NEW', 'DESKTOP NEXT', '', '', '', '', 'ZMK STUDIO', 'BACKLIGHT DEC', '', '', '', '']
+  - - MUTE
+    - MUTE
+    - 'DESKTOP CLOSE'
+    - 'DESKTOP PREV'
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  Arrows:
+  - [ESCAPE, '', '', '', '', 'LAYER DEFAULT', 'LAYER DEFAULT', 'LAYER ARROWS', 'LAYER MOUSE', 'LAYER GAMING', '', '', TAB, HOME]
+  - [UP ARROW, END, '', '', '', HOME, UP ARROW, END, '', TAB, LEFT CONTROL, LEFT ARROW, DOWN ARROW, RIGHT ARROW]
+  - ['', '', '', LEFT ARROW, DOWN ARROW, RIGHT ARROW, '', LEFT CONTROL, LEFT SHIFT, 'POSITION MOD', 'POSITION MENU',' MOVE MOD', '', '']
+  - ['', '', '', LEFT ARROW, DOWN ARROW, RIGHT ARROW, '', LEFT SHIFT, LEFT ALT, LWIN, '', ENTER, ENTER, '']
+  - [BACKSPACE, LWIN]
+  Mouse:
+  - [ESCAPE, 'BACK TAB', ENTER, TAB, '', 'LAYER DEFAULT', 'LAYER DEFAULT', 'LAYER ARROWS', 'LAYER MOUSE', 'LAYER GAMING', '', '', TAB, 'MB1']
+  - ['MOUSE UP', 'MB2', '', '', '', '', '', '', '', TAB, LEFT CONTROL, 'MOUSE LEFT', 'MOUSE DOWN', 'MOUSE RIGHT']
+  - ['', '', '', '', '', '', '', LEFT CONTROL, LEFT SHIFT, 'POSITION MOD', 'POSITION MENU','MOVE MOD', LEFT WIN, '']
+  - ['', '', '', '', '', '', '', LEFT SHIFT, LEFT ALT, LWIN, '', 'MB1', 'MB1', '']
+  - [BACKSPACE, LWIN]
+  Gaming:
+  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'LAYER DEFAULT', TAB, Q]
+  - [W, E, R, T, Y, U, I, O, P, \, LSHFT, A, S, D]
+  - [F, G, H, J, K, L, RET, RET, LCTRL, Z, X, C, V, B]
+  - ['', '', N, M, ',', ., /, RSHFT, '', '', '', SPACE, SPACE, '']
+  - ['', '']
