@@ -27,7 +27,7 @@ nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
 
 static bool nice_view_animation = true;
 #if !(NICE_VIEW_GEM_ANIMATION)
-nice_view_animation = false;
+static bool nice_view_animation = false;
 #endif
 
 static const int nice_view_animation_speed = 1100;
