@@ -12,23 +12,29 @@
 
 // Current theme and animation state
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
-#if (NICE_VIEW_ANIMATION_THEME_0)
-nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
-#endif
-#if (NICE_VIEW_ANIMATION_THEME_1)
-nice_view_theme current_theme = NICE_VIEW_THEME_OMNISSIAH;
-#endif
-#if (NICE_VIEW_ANIMATION_THEME_2)
-nice_view_theme current_theme = NICE_VIEW_THEME_ULTRAMAR;
-#endif
-#if (NICE_VIEW_ANIMATION_THEME_3)
-nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
+
+#if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_TRANSMUTATION)
+current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 #endif
 
+#if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_OMNISSIAH)
+current_theme = NICE_VIEW_THEME_OMNISSIAH;
+#endif
+
+#if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_ULTRAMAR)
+current_theme = NICE_VIEW_THEME_ULTRAMAR;
+#endif
+
+#if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_CRYSTAL)
+current_theme = NICE_VIEW_THEME_CRYSTAL;
+#endif
+
+// Animation movement state
+#if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION)
 static bool nice_view_animation = true;
-
-
-static const int nice_view_animation_speed = 1100;
+#else
+static bool nice_view_animation = false;
+#endif
 
 // Horizontal offset for centering the animation
 static lv_coord_t nice_view_theme_offset = 1;
@@ -50,15 +56,12 @@ bool nice_view_animation_is_enabled(void) {
     return nice_view_animation;
 }
 
-void nice_view_theme_init(void) {
-    /* Nothing special here for now.
-     * First draw will happen either from zmk_widget_screen_init()
-     * or via theme/animation changes once a screen is bound.
-     */
-}
-
 void nice_view_bind_screen(lv_obj_t *screen) {
     nice_view_screen = screen;
+}
+
+void nice_view_theme_init(void) {
+    calc_offset_for_theme(nice_view_theme_get());
 }
 
 /* Internal helper: redraw on the bound screen, if any */
@@ -66,6 +69,7 @@ static void nice_view_redraw(void) {
     if (!nice_view_screen) {
         return;
     }
+    nice_view_theme_init();
     draw_animation(nice_view_screen);
 }
 
@@ -74,7 +78,6 @@ void nice_view_theme_set(enum nice_view_theme theme) {
         theme = NICE_VIEW_THEME_TRANSMUTATION;
     }
     current_theme = theme;
-    nice_view_redraw();
 }
 
 enum nice_view_theme nice_view_theme_get(void) {
@@ -84,7 +87,8 @@ enum nice_view_theme nice_view_theme_get(void) {
 void nice_view_theme_next(void) {
     enum nice_view_theme theme = nice_view_theme_get();
     theme = (theme + 1) % NICE_VIEW_THEME_COUNT;
-    nice_view_theme_set(theme); /* will redraw */
+    nice_view_theme_set(theme);
+    nice_view_redraw();
 }
 
 void nice_view_animation_toggle(void) {
@@ -109,7 +113,6 @@ void nice_view_animation_on(void) {
 /* -------------------------------------------------------------------------- */
 /* Offset calculation                                                         */
 /* -------------------------------------------------------------------------- */
-
 static void calc_offset_for_theme(enum nice_view_theme theme) {
     const lv_coord_t max_width = 120;
     const lv_img_dsc_t * const *frames = nice_view_anim_sets[theme];
@@ -145,8 +148,6 @@ void draw_animation(lv_obj_t *canvas) {
         return; /* nothing to draw */
     }
 
-    calc_offset_for_theme(theme);
-
     /* Delete previous art object, if any, so we don't accumulate LVGL objects. */
     if (art_obj) {
         lv_obj_del(art_obj);
@@ -158,7 +159,7 @@ void draw_animation(lv_obj_t *canvas) {
         lv_obj_center(art_obj);
 
         lv_animimg_set_src(art_obj, (const void **)frames, frame_count);
-        lv_animimg_set_duration(art_obj, nice_view_animation_speed);
+        lv_animimg_set_duration(art_obj, CONFIG_NICE_VIEW_ANIMATION_MS);
         lv_animimg_set_repeat_count(art_obj, LV_ANIM_REPEAT_INFINITE);
         lv_animimg_start(art_obj);
     } else {
@@ -169,6 +170,7 @@ void draw_animation(lv_obj_t *canvas) {
 
     lv_obj_align(art_obj, LV_ALIGN_TOP_LEFT, nice_view_theme_offset, 0);
 }
+
 
 /* -------------------------------------------------------------------------- */
 /* Event listener: respond to cycle_animation_state_changed                   */

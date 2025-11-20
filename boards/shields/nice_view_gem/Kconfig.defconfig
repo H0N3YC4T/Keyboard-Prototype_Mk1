@@ -1,18 +1,17 @@
 if SHIELD_NICE_VIEW_GEM
 
-config NICE_VIEW_ANIMATION_THEME_0
-    bool "THEME 0"
+config NICE_VIEW_ANIMATION_THEME_TRANSMUTATION
+    bool "Enable transmutation animation"
+    default y
+config NICE_VIEW_ANIMATION_THEME_OMNISSIAH
+    bool "Enable omnissiah animation"
     default n
-config NICE_VIEW_ANIMATION_THEME_1
-    bool "THEME 1"
+config NICE_VIEW_ANIMATION_THEME_ULTRAMAR
+    bool "Enable ultramar animation"
     default n
-config NICE_VIEW_ANIMATION_THEME_2
-    bool "THEME 2"
+config NICE_VIEW_ANIMATION_THEME_CRYSTAL
+    bool "Enable crystal animation"
     default n
-config NICE_VIEW_ANIMATION_THEME_3
-    bool "THEME 3"
-    default n
-
 
 config LV_Z_VDB_SIZE
     default 100
@@ -49,13 +48,13 @@ config NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX
     int "Fixed range maximum for WPM gauge/chart"
     default 100
 
-config NICE_VIEW_GEM_ANIMATION
+config CONFIG_NICE_VIEW_ANIMATION
     bool "Enable animation on peripheral"
     default y
 
-config NICE_VIEW_GEM_ANIMATION_MS
+config NICE_VIEW_ANIMATION_MS
     int "Animation length in milliseconds"
-    default 960
+    default 1200
 
 config NICE_VIEW_WIDGET_STATUS
     select LV_USE_LABEL
