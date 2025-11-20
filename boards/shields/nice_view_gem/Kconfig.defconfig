@@ -48,7 +48,7 @@ config NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX
     int "Fixed range maximum for WPM gauge/chart"
     default 100
 
-config CONFIG_NICE_VIEW_ANIMATION
+config NICE_VIEW_ANIMATION
     bool "Enable animation on peripheral"
     default y
 
