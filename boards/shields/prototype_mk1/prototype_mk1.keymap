@@ -47,6 +47,10 @@
     keymap {
         compatible = "zmk,keymap";
 
+
+
+
+
         default_layer {
             display-name = "Base";
             bindings = <
@@ -59,6 +63,11 @@
 
             sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp RIGHT LEFT>;
         };
+
+
+
+
+
 
         layer_lower {
             display-name = "Lower";
@@ -75,6 +84,11 @@
                 <&inc_dec_kp LC(Y) LC(Z)>;
         };
 
+
+
+
+
+
         layer_upper {
             display-name = "Raise";
             bindings = <
@@ -84,11 +98,15 @@
 &trans     &kp EQUAL     &kp MINUS     &kp PLUS      &none         &kp LEFT_PARENTHESIS  &none   &kp LG(TAB)  &kp RIGHT_PARENTHESIS  &none     &kp SEMI         &kp COLON  &kp BACKSLASH  &kp RIGHT_SHIFT
                                        &trans        &trans        &trans                &trans  &trans       &trans                 &trans    &trans
             >;
-
             sensor-bindings =
                 <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
                 <&inc_dec_kp C_AL_NEXT_TASK C_AL_PREVIOUS_TASK>;
         };
+
+
+
+
+
 
         layer_settings {
             display-name = "Settings";
@@ -99,11 +117,14 @@
 &studio_unlock     &bl BL_DEC    &none         &none         &none         &none               &kp K_MUTE  &kp K_MUTE  &kp LG(LC(F4))  &kp LG(LC(LEFT))   &none   &none  &none  &none
                                                &trans        &trans        &trans              &trans      &trans      &trans          &trans             &trans
             >;
-
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
+
+
+
+
 
         layer_arrows {
             display-name = "Arrows";
@@ -114,11 +135,14 @@
 &kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &none     &none  &none      &none      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp LEFT_SHIFT
                                                     &kp LEFT_ALT      &kp LWIN  &none  &kp ENTER  &kp ENTER  &none  &kp BACKSPACE   &kp LWIN
             >;
-
-            sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp UP DOWN>;
-
-            label = "Arrows";
+            sensor-bindings = 
+                <&inc_dec_kp UP DOWN>, 
+                <&inc_dec_kp UP DOWN>;
         };
+
+
+
+
 
         layer_mouse {
             display-name = "Mouse";
@@ -129,9 +153,11 @@
 &kp LEFT_SHIFT    &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &none  &none     &none     &none  &none          &none     &none  &none  &kp LEFT_SHIFT
                                                     &kp LEFT_ALT      &kp LWIN      &none  &mkp MB1  &mkp MB1  &none  &kp BACKSPACE  &kp LWIN
             >;
-
-            label = "Mouse";
         };
+
+
+
+
 
         layer_gaming {
             display-name = "Gaming";
@@ -142,8 +168,6 @@
 &kp LCTRL   &kp Z   &kp X   &kp C         &kp V         &kp B   &none      &none      &kp N        &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                             &kp LEFT_ALT  &kp LEFT_WIN  &none   &kp SPACE  &kp ENTER  &kp LA(TAB)  &trans  &trans
             >;
-
-            label = "Gaming";
             sensor-bindings =
                 <&inc_dec_kp C_AL_NEXT_TASK C_AL_PREV_TASK>,
                 <&inc_dec_kp C_KEYBOARD_INPUT_ASSIST_NEXT C_KEYBOARD_INPUT_ASSIST_PREVIOUS>;
