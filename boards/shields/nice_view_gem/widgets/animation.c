@@ -11,8 +11,6 @@
 #include "animation_assets.h"
 
 // Current theme and animation state
-
-
 #if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_TRANSMUTATION)
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 #endif
