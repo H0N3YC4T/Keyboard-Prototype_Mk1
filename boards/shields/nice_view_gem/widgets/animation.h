@@ -23,7 +23,7 @@ bool nice_view_animation_is_enabled(void);
  *
  * Call this during your display/widget init if you want a formal init step.
  */
-void nice_view_theme_init(void);
+void nice_view_theme_redraw(void);
 
 /**
  * @brief Bind the LVGL screen/container that the animation should draw into.
