@@ -14,19 +14,19 @@
 static enum nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_TRANSMUTATION)
-current_theme = NICE_VIEW_THEME_TRANSMUTATION;
+nice_view_theme current_theme = NICE_VIEW_THEME_TRANSMUTATION;
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_OMNISSIAH)
-current_theme = NICE_VIEW_THEME_OMNISSIAH;
+nice_view_theme current_theme = NICE_VIEW_THEME_OMNISSIAH;
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_ULTRAMAR)
-current_theme = NICE_VIEW_THEME_ULTRAMAR;
+nice_view_theme current_theme = NICE_VIEW_THEME_ULTRAMAR;
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_ANIMATION_THEME_CRYSTAL)
-current_theme = NICE_VIEW_THEME_CRYSTAL;
+nice_view_theme current_theme = NICE_VIEW_THEME_CRYSTAL;
 #endif
 
 // Animation movement state
