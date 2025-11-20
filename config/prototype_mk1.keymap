@@ -66,7 +66,7 @@
 &kp ESC  &trans          &trans     &trans     &trans     &trans                                 &trans             &trans            &trans          &trans            &trans        &none
 &trans   &kp LC(LS(N4))  &none      &none      &none      &none                                  &none              &kp HOME          &kp UP_ARROW    &kp END           &none         &kp DELETE
 &trans   &kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                              &none              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &none         &none
-&trans   &kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &kp LG(TAB)  &trans  &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
+&trans   &kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACKET  &kp LG(TAB)  &none   &kp RIGHT_BRACKET  &kp LA(LEFT_WIN)  &kp LG(Z)       &kp LS(LEFT_WIN)  &kp LEFT_WIN  &trans
                                     &trans     &trans     &trans            &trans       &trans  &trans             &trans            &trans
             >;
 
@@ -78,11 +78,11 @@
         layer_upper {
             display-name = "Raise";
             bindings = <
-&kp GRAVE  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                 &kp F6                 &kp F7    &kp F8           &kp F9     &kp F10        &kp F11
-&trans     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                                 &kp NUMBER_6           &kp N7    &kp N8           &kp N9     &kp N0         &kp F12
-&trans     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                                              &kp CARET              &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR       &kp PIPE
-&trans     &kp EQUAL     &kp MINUS     &kp PLUS      &none         &kp LEFT_PARENTHESIS  &kp LESS_THAN  &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &none     &kp SEMI         &kp COLON  &kp BACKSLASH  &kp RIGHT_SHIFT
-                                       &trans        &trans        &trans                &trans         &trans            &trans                 &trans    &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                 &kp F6                 &kp F7    &kp F8           &kp F9     &kp F10        &kp F11
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                                 &kp NUMBER_6           &kp N7    &kp N8           &kp N9     &kp N0         &kp F12
+&trans  &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                                              &kp CARET              &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR       &kp PIPE
+&trans  &kp EQUAL     &kp MINUS     &kp PLUS      &none         &kp LEFT_PARENTHESIS  &kp LESS_THAN  &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &none     &kp SEMI         &kp COLON  &kp BACKSLASH  &kp RIGHT_SHIFT
+                                    &trans        &trans        &trans                &trans         &trans            &trans                 &trans    &trans
             >;
 
             sensor-bindings =
