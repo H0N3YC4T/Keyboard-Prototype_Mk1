@@ -59,7 +59,7 @@ void nice_view_bind_screen(lv_obj_t *screen) {
 }
 
 /* Internal helper: redraw on the bound screen, if any */
-static void nice_view_redraw(void) {
+static void nice_view_theme_redraw(void) {
     if (!nice_view_screen) {
         return;
     }
@@ -82,7 +82,7 @@ void nice_view_theme_next(void) {
     enum nice_view_theme theme = nice_view_theme_get();
     theme = (theme + 1) % NICE_VIEW_THEME_COUNT;
     nice_view_theme_set(theme);
-    nice_view_redraw();
+    nice_view_theme_redraw();
 }
 
 void nice_view_animation_toggle(void) {

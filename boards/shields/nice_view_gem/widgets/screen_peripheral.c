@@ -115,7 +115,7 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     /* NEW: Tell animation.c which LVGL object to render into */
     nice_view_bind_screen(widget->obj);
 
-    nice_view_redraw();
+    nice_view_theme_redraw();
 
     sys_slist_append(&widgets, &widget->node);
     widget_battery_status_init();
