@@ -59,7 +59,7 @@ void nice_view_bind_screen(lv_obj_t *screen) {
 }
 
 /* Internal helper: redraw on the bound screen, if any */
-static void nice_view_theme_redraw(void) {
+void nice_view_theme_redraw(void) {
     if (!nice_view_screen) {
         return;
     }
