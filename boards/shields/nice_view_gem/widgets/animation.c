@@ -60,16 +60,12 @@ void nice_view_bind_screen(lv_obj_t *screen) {
     nice_view_screen = screen;
 }
 
-void nice_view_theme_init(void) {
-    calc_offset_for_theme(nice_view_theme_get());
-}
-
 /* Internal helper: redraw on the bound screen, if any */
 static void nice_view_redraw(void) {
     if (!nice_view_screen) {
         return;
     }
-    nice_view_theme_init();
+    calc_offset_for_theme(nice_view_theme_get());
     draw_animation(nice_view_screen);
 }
 
@@ -93,20 +89,26 @@ void nice_view_theme_next(void) {
 
 void nice_view_animation_toggle(void) {
     nice_view_animation = !nice_view_animation;
-    nice_view_redraw();
+        if (!nice_view_screen) {
+            draw_animation(nice_view_screen);
+        }
 }
 
 void nice_view_animation_off(void) {
     if (nice_view_animation) {
         nice_view_animation = false;
-        nice_view_redraw();
+        if (!nice_view_screen) {
+            draw_animation(nice_view_screen);
+        }
     }
 }
 
 void nice_view_animation_on(void) {
     if (!nice_view_animation) {
         nice_view_animation = true;
-        nice_view_redraw();
+        if (!nice_view_screen) {
+            draw_animation(nice_view_screen);
+        }
     }
 }
 
