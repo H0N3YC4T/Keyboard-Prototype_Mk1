@@ -368,10 +368,9 @@ tspan         { fill: inherit; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
 <text x="0" y="0" class="key sym tap">/</text>
 </g>
-<g transform="translate(896, 224)" class="key mod keypos-49">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key mod"/>
-<text x="0" y="0" class="key mod tap">⇧</text>
-<text x="0" y="-24" class="key mod shifted">CAPS</text>
+<g transform="translate(896, 224)" class="key sym keypos-49">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
+<text x="0" y="0" class="key sym tap">\</text>
 </g>
 <g transform="translate(168, 260)" class="key mod keypos-50">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key mod"/>
@@ -579,7 +578,7 @@ tspan         { fill: inherit; }
 </g>
 <g transform="translate(140, 203)" class="key macro keypos-38">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key macro"/>
-<text x="0" y="0" class="key macro tap">Redo</text>
+<text x="0" y="0" class="key macro tap">Ctl+X</text>
 </g>
 <g transform="translate(196, 196)" class="key macro keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key macro"/>
@@ -855,13 +854,15 @@ tspan         { fill: inherit; }
 <text x="0" y="0" class="key macro tap">Copy</text>
 <text x="0" y="-24" class="key macro shifted">Line</text>
 </g>
-<g transform="translate(252, 203)" class="key sym keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
-<text x="0" y="0" class="key sym tap">&amp;&amp;</text>
+<g transform="translate(252, 203)" class="key macro keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key macro"/>
+<text x="0" y="0" class="key macro tap">Paste</text>
 </g>
-<g transform="translate(308, 210)" class="key sym keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
-<text x="0" y="0" class="key sym tap">||</text>
+<g transform="translate(308, 210)" class="key macro keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key macro"/>
+<text x="0" y="0" class="key macro tap">
+<tspan x="0" dy="-0.6em">Screen</tspan><tspan x="0" dy="1.2em">Clip</tspan>
+</text>
 </g>
 <g transform="translate(382, 186) rotate(45.0)" class="key macro keypos-42">
 <rect rx="6" ry="6" x="-27" y="-27" width="55" height="55" class="key macro"/>
@@ -892,13 +893,13 @@ tspan         { fill: inherit; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
 <text x="0" y="0" class="key sym tap">&gt;</text>
 </g>
-<g transform="translate(840, 217)" class="key sym keypos-48">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
-<text x="0" y="0" class="key sym tap">\</text>
+<g transform="translate(840, 217)" class="key macro keypos-48">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key macro"/>
+<text x="0" y="0" class="key macro tap"><tspan style="font-size: 88%">QUESTION</tspan></text>
 </g>
-<g transform="translate(896, 224)" class="key mod keypos-49">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key mod"/>
-<text x="0" y="0" class="key mod tap">⇧</text>
+<g transform="translate(896, 224)" class="key sym keypos-49">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym"/>
+<text x="0" y="0" class="key sym tap">|</text>
 </g>
 <g transform="translate(168, 260)" class="key ghost keypos-50">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key ghost"/>
